@@ -191,7 +191,7 @@ public class EditCommand extends Command {
         }
 
         public void setPendingQuestion(PendingQuestion pq) {
-            this.pendingQuestion = pendingQuestion;
+            this.pendingQuestion = pq;
         }
 
         public Optional<PendingQuestion> getPendingQuestion() {
