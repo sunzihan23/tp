@@ -400,6 +400,18 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 --------------------------------------------------------------------------------------------------------------------
 ## **Appendix: Instructions for manual testing**
 
+This is a list of prefixes used for manual testing.
+
+| Prefix | Representation     | 
+|--------|--------------------|
+| `c/`   | `COURSE_NAME`      |
+| `n/`   | `NAME`             | 
+| `e/`   | `EMAIL`            | 
+| `t/`   | `TAG`              | 
+| `r/`   | `REMARK`           | 
+| `pq/`  | `PENDING_QUESTION` | 
+| `s/`   | `SORT`             | 
+
 Given below are instructions to test the app manually.
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
@@ -409,45 +421,259 @@ testers are expected to do more *exploratory* testing.
 
 ### Launch and shutdown
 
-1. Initial launch
+1. Initial launch.
 
-    1. Download the jar file and copy into an empty folder
+   1. Download the jar file and copy it into an empty folder.
 
-    2. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Open a command terminal, then `cd` into the folder containing the jar file. 
 
-2. Saving window preferences
+   3. Use the `java -jar CodeSphere.jar` command to run the CodeSphere application.
 
-    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
+   Expected: Shows the GUI with a set of sample courses. The window size may not be optimum.<br>
 
-    2. Re-launch the app by double-clicking the jar file.<br>
+2. Saving window preferences.
+
+    1. Resize the window to an optimum size, then move the window to a different location and close the window.
+
+    2. Re-launch the app by running the `java -jar CodeSphere.jar` command again.<br>
        Expected: The most recent window size and location is retained.
 
+### Clearing all data
+Command: `clear`
 
-### Deleting a Course
+More information on usages: [clear courses command](UserGuide.html#clearing-all-courses-clear) and [clear students command](UserGuide.html#clearing-all-students-clear)
 
-1. Deleting a course while all courses are being shown<br>
-<br>
-    1. Test case: `delete 1`<br>
-       Expected: First course is deleted from the list. Details of the deleted course shown in the status message.<br>
-<br>
-    2. Test case: `delete 0`<br>
-        Expected: No course is deleted. Error details shown in the status message.<br>
-<br>
-    3. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+1. Clearing all courses while all courses are being shown.
+
+   1. Prerequisites: Ensure the current page is the home page using the `home` command. List all courses using the `reset` command.
+   
+   2. Test case: `clear`<br>
+      Expected: All courses are cleared from the course list.
+
+2. Clearing all students while all students in the selected course are being shown.
+
+   1. Prerequisites: Ensure the current page is the course page using the `select` command. Filter the student list by a specified field using the `find` command or sort the student list by a specified sort criteria using the `sort` command.
+
+   2. Test case: `clear`<br>
+      Expected: All students are cleared from the student list for the selected course.
+
+
+### Adding a course
+Command: `add`
+
+More information on usage: [add course command](UserGuide.html#adding-a-course--add)
+
+1. Adding a course while all courses are being shown.
+
+   1. Prerequisites: Ensure the current page is the home page using the `home` command. List all courses using the `reset` command.
+
+   2. Test case: `add c/cs2101`<br>
+      Expected: A course with course name `CS2101` is added to list of courses.<br>
+      The course is added to the last index of the course list. The course card appeared at the last in the list.<br>
+      The details of the added course is shown in the status message.
+
+   3. Incorrect add course commands to try: `add`, `add c/cs`, `add cs2106 n/John Doe`, etc.<br>
+      Expected: No course added to the course list. Error details shown in the error message.
+
+2. Adding a course while the course list is being filtered.
+
+   1. Prerequisites: Ensure the current page is the home page using the `home` command. Filter the courses by course name using the `find` command.
+
+   2. Test case: Similar to previous.<br>
+      Expected: Similar to previous.
+
+### Deleting a course
+Command: `delete`
+
+More information on usage: [delete course command](UserGuide.html#deleting-a-course--delete)
+
+1. Deleting a course while all courses are being shown.
+
+    1. Prerequisites: Ensure the current page is the home page using the `home` command. List all courses using the `reset` command.
+
+    2. Test case: `delete 1`<br>
+       Expected: The first course is deleted from the list of courses.<br>
+       Details of the deleted course is shown in status message.<br>
+       All student information in the deleted course are also deleted.
+
+    3. Test case: `delete 0`<br>
+       Expected: No course is deleted. Error details shown in the error message.
+
+    4. Other incorrect delete course commands to try: `delete`, `delete x` (where x is larger than the course list size), etc.<br>
        Expected: Similar to previous.
 
-### Adding a Remark to a Student
+2. Deleting a course while the course list is being filtered.
 
-1. Adding a remark to a student while all students in the selected course are being shown<br>
-<br>
-    1. Test case: `remark 1 r/Needs more help`<br>
-       Expected: The remark `Needs more help` is added to the first student from the list. Details of the student shown in the status message.<br>
-<br>
-    2. Test case: `remark 0 r/Needs more help`<br>
-       Expected: No remark is added. Error details shown in the status message.<br>
-<br>
-    3. Test case: `remark 1 r/`<br>
-       Expected: No remark is added. Error details shown in the status message.<br>
-<br>
-    4. Other incorrect remark commands to try: `remark`, `remark x`, `...` (where x is larger than the list size)
+    1. Prerequisites: Ensure the current page is the home page using the `home` command. Filter the courses by course name using the `find` command.
+
+    2. Test case: Similar to previous.<br>
        Expected: Similar to previous.
+
+### Finding courses by course name
+Command: `find`
+
+More information on usage: [find course command](UserGuide.html#finding-a-course--find)
+
+1. Finding a course while all courses are being shown.
+
+    1. Prerequisites: Ensure the current page is the home page using the `home` command. List all courses using the `reset` command.
+
+    2. Test case: `find cs` or `find CS`<br>
+       Expected: All courses with course name containing `CS` are shown.
+
+    3. Test case: `find 20`<br>
+       Expected: All courses with course name containing `20` are shown.
+
+    4. Test case: `find cs 20`<br>
+       Expected: All courses with course name containing `CS` and/or `20` are shown.
+
+    5. Incorrect find commands to try: `find`, `find c/`, etc.<br>
+       Expected: No student contacts filtered. Error details shown in the error message.
+
+2. Finding a student contact while the student contact list is being filtered.
+
+    1. Prerequisites: Ensure the current page is the home page using the `home` command. Filter the courses by course name using the `find` command.
+
+    2. Test case: `find 20`<br> 
+       Expected: If the course list was initially filtered with `find s` before `find 20`, all courses with course name containing `s` and `20` are shown.
+
+    3. Incorrect find commands to try: `find`, `find c/`, etc.<br>
+       Expected: No student contacts filtered.<br>
+       Error details shown in the error message.
+
+### Selecting a course
+Command: `select`
+
+More information on usage: [select course command](UserGuide.html#selecting-a-course--select)
+
+1. Selecting a course while all courses are being shown.
+    1. Prerequisites: Ensure the current page is the home page using the `home` command. List all courses using the `reset` command.
+
+    2. Test case: `select 1`<br>
+       Expected: The first course is selected from the list of courses.<br>
+       The display changed to show 2 columns. The course list is displayed in the left column, while all students in the selected course are displayed in the right column.<br>
+       Details of the selected course is shown in status message.<br>
+
+    3. Test case: `delete 0`<br>
+       Expected: No course is selected. Error details shown in the error message.
+
+    4. Other incorrect select course commands to try: `select`, `delete x` (where x is larger than the course list size), etc.<br>
+       Expected: Similar to previous.
+
+2. Selecting a course while the course list is being filtered.
+    1. Prerequisites: Ensure the current page is the home page using the `home` command. Filter the courses by course name using the `find` command.
+
+    2. Test case: Similar to previous.<br>
+       Expected: Similar to previous.
+
+
+### Adding a student
+Command: `add`
+
+More information on usage: [add student command](UserGuide.html#adding-a-student--add)
+
+1. Adding a student while all students in the selected course are being shown.
+    1. Prerequisites: Ensure the current page is the course page using the `select` command. List all student using the `reset` command.
+
+    2. Test case: `add n/John Doe e/e1234567@u.nus.edu t/good`<br>
+       Expected: A student with name `John Doe` with the entered attributes is added to student list.<br>
+       The student is added to the last index of the student list. The student card appeared at the last in the student list.<br>
+       The details of the added student is shown in the status message.
+
+    3. Test case: `add n/John Doe e/e1111111@u.nus.edu t/good` <br>
+       Expected: A student with name `John Doe` with the entered attributes is added to student list.<br>
+       Note that the `NAME` of this student is the same as that of test case 2. However, the student contact's `EMAIL` are **different**.<br>
+       The student is added to the last index of the student list. The student card appeared at the last in the student list.<br>
+       The details of the added student is shown in the status message.
+
+    4. Incorrect add course commands to try: `add`, `add c/cs`, `add n/John Doe`, `add n/John Doe e/john@gmail.com t/good`, `add n/John Doe e/e2222222@u.nus.edu t/friend`, etc.<br>
+       Expected: No course added to the course list. Error details shown in the error message.
+
+2. Adding a student with duplicate/identical `EMAIL` attributes.
+    1. Prerequisites: There exists a student in student list with `EMAIL` attribute `e1234567@u.nus.edu`.<br>
+       Example: `n/John Doe e/e1234567@u.nus.edu t/good`
+
+    2. Test case: `add n/John Doe e/e1234567@u.nus.edu t/good`<br>
+       Expected: No student is added to the student list because the student has the same `EMAIL` as an existing student in the list.<br>
+       Error details shown in the error message.
+
+3. Adding a student while the student list is being filtered or sorted.
+
+    1. Prerequisites: Ensure the current page is the course page using the `select` command. Filter the student list by a specified field using the `find` command or sort the student list by a specified sort criteria using the `sort` command.
+
+    2. Test case: Similar to previous.<br>
+       Expected: Similar to previous.<br>
+       But note that the student list is reset to show all students after adding a student successfully.
+
+### Adding a remark to a student
+Command: `remark`
+
+More information on usage: [remark student command](UserGuide.html#adding-a-remark-for-a-student--remark)
+
+1. Adding a remark to a student while all students in the selected course are being shown.
+
+   1. Prerequisites: Ensure the current page is the course page using the `select` command. List all student using the `reset` command.
+
+   2. Test case: `remark 1 r/Needs more help`<br>
+      Expected: The remark `Needs more help` is added to the first student in the student list.<br>
+      The details of the first student is shown in the status message.
+
+   3. Test case: `remark 0 r/Needs more help`<br>
+      Expected: No remark is added.<br>
+      Error details shown in the status message.
+
+   4. Test case: `remark 1 r/`<br>
+      Expected: No remark is added.<br>
+      Error details shown in the status message.
+
+   5. Other incorrect remark commands to try: `remark`, `remark x` (where x is larger than the list size), etc.<br>
+      Expected: Similar to previous.
+
+2. Adding a remark to a student while the student list is being filtered or sorted.
+
+   1. Prerequisites: Ensure the current page is the course page using the `select` command. Filter the student list by a specified field using the `find` command or sort the student list by a specified sort criteria using the `sort` command.
+
+   2. Test case: Similar to previous.<br>
+      Expected: Similar to previous.
+
+### Sorting the student list
+Command: `sort`
+
+More information on usage: [sort students command](UserGuide.html#sorting-all-students--sort)
+
+1. Sorting the student list by the specified sort criteria while all students in the selected course are being shown.
+
+    1. Prerequisites: Ensure the current page is the course page using the `select` command. List all student using the `reset` command.
+
+    2. Test case: `sort s/tag`<br>
+       Expected: The student list is arranged according to performance tags, with students tagged as `GOOD` at the top of the list.<br>
+       `NAME` is used as a tiebreaker for students with the same `TAG`. `EMAIL` is used as the next tiebreaker for students with the same `TAG` and the same `NAME`.<br>
+       Success message shown as the status message.
+
+    3. Test case: `sort s/name`<br>
+       Expected: The student list is arranged in alphabetical order according to names. Students with names starting with 'A' are shown at the top of the list.<br>
+       `EMAIL` is used as the tiebreaker for students with the same `NAME`.<br>
+       Success message shown as the status message.
+
+    4. Test case: `sort s/gender`<br>
+       Expected: Student list is not sorted.<br>
+       Error details shown in the status message.
+
+    5. Other incorrect remark commands to try: `sort`, `sort s/`, etc.<br>
+       Expected: Similar to previous.
+
+2. Sorting the student list by the specified sort criteria while the student list is already being sorted.
+
+    1. Prerequisites: Ensure the current page is the course page using the `select` command. Sort the student list by a specified sort criteria using the `sort` command.
+
+    2. Test case: Similar to previous.<br>
+       Expected: Similar to previous.<br>
+       Note that the student list will only be sorted by one sort criteria. The new sort criteria overrides the previous sort criteria. 
+
+3. Sorting the student list by the specified sort criteria while the student list is already being filtered.
+
+   1. Prerequisites: Ensure the current page is the course page using the `select` command. Filter the student list by a specified field using the `find` command.
+
+   2. Test case: Similar to previous.<br>
+      Expected: Similar to previous.<br>
+      Note that sorting and filtering can be stacked. Sorting is done on top of the currently filtered list.
