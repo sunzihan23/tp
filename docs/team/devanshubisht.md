@@ -52,8 +52,8 @@ Given below are my contributions to the project.
         * Edited UML diagram for `Model` component (PR [#341](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/341/)).
         * Described the implementation and logic flow of `find` command (PR [#341](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/341/)).
         * Added activity, sequence and class diagrams for `find` command (PR [#341](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/341/), PR [#361](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/361)).
-        * Added manual testing walkthrough for `find`.
-        * Added the points under Planned Enhancements.
+        * Added manual testing walkthrough for `find` (PR [#370](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/370/)).
+        * Added the points under Planned Enhancements (PR [#370](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/370/)).
 
 * **Team-tasks**:
   * Set up MarkBind initially and then changed to Jerkyll for product website.(PR [#71](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/71)).
