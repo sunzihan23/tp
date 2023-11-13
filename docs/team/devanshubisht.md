@@ -12,20 +12,19 @@ It is an app targeted at enabling Teaching Assistants in NUS School of Computing
 Given below are my contributions to the project.
 
 * **New Feature**: Find Command.
-  * What it does: Find students in a course based on different criteria. It is implemented such that the order and case of the words searched for does not matter.
-  * Justification: This feature allows teaching assistants to quickly search for students based on any attribute of the student. It's difficult to keep track of all the details of students and TAs may at times only recall partial information. Through this feature, they can find any word or incomplete sentence to find a possible match for the specified criteria in their student list.
-  * Highlights: This enhancement required the development of different predicates for each attribute of the student. It also works intricately with the Course class to ensure that the filtered list of students is appropriately updated. It also adds functions to the StringUtil class to better align the logic behind magic more catered to our use case.
+  * What it does: Locate students in a course using various criteria. The search is case-insensitive and order-agnostic.
+  * Justification: This feature aids teaching assistants in quickly locating students based on partial information. Enables efficient searches for any attribute, enhancing overall workflow.
+  * Highlights: Development included distinct predicates for student attributes, integration with the Course class for proper list updates, and StringUtil class enhancements for tailored logic.
 
 * **New Feature**: StageManager & Stages.
-  * What it does: Allows our application to know which stage the user is at to parse the relevant commands correctly. It also helps to UiManager to know which components to display.
-  * Justification: This feature allows users to not need to write length commands based on which section they are in. For example, our application can automatically detect if the `add` command should add a student or course. The logic also prevents bugs from happening as we restrict the usage of some commands based on which stage they are at.
+  * What it does: Determines the user's stage to parse commands accurately and guides UiManager in displaying relevant components.
+  * Justification: This feature eliminates the need for lengthy, section-specific commands. For example, our application can detect if the `add` command should add a student or course. The logic also prevents bugs from happening as we restrict the usage of some commands based on which stage they are at.
   * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to classes such as LogicManager and CodeSphereParser.
 
 * **New Feature**: Home.
   * What it does: Allows users to visit back home when they are viewing a student list of a selected course.
   * Justification: A user-friendly command to allow users to navigate back to the home page which contains all the courses.
   * Highlights: This command needed to be implemented appropriately such that our application Stage would be implemented correctly.
-
 
 * **New Feature**: Add Course.
   * What it does: Allows users to add a new course to their taught classes while ensuring it is of the correct format.
@@ -53,6 +52,8 @@ Given below are my contributions to the project.
         * Edited UML diagram for `Model` component (PR [#341](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/341/)).
         * Described the implementation and logic flow of `find` command (PR [#341](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/341/)).
         * Added activity, sequence and class diagrams for `find` command (PR [#341](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/341/), PR [#361](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/361)).
+        * Added manual testing walkthrough for `find`.
+        * Added the points under Planned Enhancements.
 
 * **Team-tasks**:
   * Set up MarkBind initially and then changed to Jerkyll for product website.(PR [#71](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/71)).
