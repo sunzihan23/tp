@@ -57,8 +57,6 @@ And to find out more about what else CodeSphere can do for you, continue to read
     * [**Course Page**](#course-page)
 8. [**Glossary**](#glossary)
 
-<div style="page-break-after: always"></div>
-
 ## **User Guide Tips**
 
 ### Finding what you need
@@ -168,6 +166,8 @@ The student list for `CS2101` is currently empty, so let's add a few students in
 
 ![Filled CS1101S](images/tutorial/course_students.png)
 
+<div style="page-break-after: always"></div>
+
 ### Tutorial: Adding remarks / pending questions
 
 Lastly, let's take a look at how we can add remarks or pending questions for a student.
@@ -206,8 +206,6 @@ Now that you know how CodeSphere works, feel free to explore some other features
     * e.g. `n/NAME [r/REMARK]` can be used as `n/John Doe r/Need more help` or as `n/John Doe`.
 
 </div>
-
-<div style="page-break-after: always"></div>
 
 ### **Accessing Input History**
 
@@ -462,7 +460,7 @@ Clears all students in the displayed list of students in the selected course.
 * `clear` returns the following result:
 *![Clear_Student](images/CommandSuccessScreenshots/ClearStudentListSuccess.png)*
 
-
+<div style="page-break-after: always;"></div>
 
 ### Resetting the student list : `reset`
 
@@ -472,7 +470,7 @@ Shows a list of all students in the original state after filtering or sorting.
 * `reset` returns the following result:
 *![Reset_Student](images/CommandSuccessScreenshots/ResetStudentSuccess.png)*
 
-
+<div style="page-break-after: always;"></div>
 
 ### Sorting all students : `sort`
 
@@ -494,6 +492,7 @@ Sorts the list of students you are overseeing in the selected course **by name o
 
 **Command failure:** Incorrect format results in an error message shown and the student list is not sorted.
 
+<div style="page-break-after: always;"></div>
 
 ### Finding a student : `find`
 
@@ -517,6 +516,7 @@ Find a student **by a certain field** from the list of students you are overseei
 
 **Command failure:** Users enter the command with incorrect formatting, resulting in an error message shown to the user.
 
+<div style="page-break-after: always;"></div>
 
 ### List all pending questions : `list`
 
@@ -532,6 +532,7 @@ List all the students with non-empty pending question fields.
 
 **Command failure:** Users enter the command with incorrect formatting, resulting in an error message shown to the user.
 
+<div style="page-break-after: always;"></div>
 
 ### Adding a remark for a student : `remark`
 
@@ -554,6 +555,7 @@ Adds a remark to the specified student from the list of students.
 
 **Command failure:** Incorrect format results in an error message shown and the remark is not added to the student.
 
+<div style="page-break-after: always;"></div>
 
 ### Adding a pending question for a student : `pq`
 
@@ -576,6 +578,7 @@ Adds a pending question to a specified student from the list of students of a co
 
 **Command failure:** Incorrect format results in an error message shown and pending question is not added to the student.
 
+<div style="page-break-after: always;"></div>
 
 ### Removing a remark/pending question of a student : `remove`
 
@@ -598,6 +601,7 @@ Removes a remark or pending question of a specified student from the list of stu
 
 **Command failure:** Incorrect format results in an error message shown and the remark/pending question is not removed from the student.
 
+<div style="page-break-after: always;"></div>
 
 ### Returning to the home page : `home`
 Returns to the [home page](#home-page-commands) showing the list of courses you are overseeing.
@@ -687,8 +691,6 @@ If your changes to the data file makes it invalid, CodeSphere will overwrite all
 | **Exit**                                 | `exit`                                                                                 |
 
 [_Back to Top_](#table-of-contents)
-
-<div style="page-break-after: always"></div>
 
 ## **Glossary**
 
