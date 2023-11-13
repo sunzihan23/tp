@@ -33,15 +33,13 @@ Given below are my contributions to the project.
 
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=devanshu&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code&since=2023-09-22&tabOpen=true&tabType=authorship&tabAuthor=devanshubisht&tabRepo=AY2324S1-CS2103T-W15-4%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false).
 
-* **Project management**:
-    * Generated and managed issues for the progress of the app for `v1.2`-`v1.4` on GitHub.
-
 * **Enhancements to existing features**:
     * Update StringUtil component for the app (PR [#165](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/165)).
     * Update CodeSphereParser component for the app (PR [#77](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/77)).
-    * Added and updated test files for several classes and existing features to align with the app's functions ([#300](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/300), [#299](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/#299)).
+    * Added and updated test files for several classes and existing features to align with the app's functions ([#278](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/278), [#281](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/#281), [#282](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/#282), [#280](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/#280), [#328](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/#328)).
     * Added multiple predicate files in model which are used for the logic in `find` (PR [#165](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/165)).
     * Implemented an auto `reset` when user goes from a Course stage to a Home stage (PR [#165](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/165)).
+    * Added more sample data in `SampleDataUtil` for first time users to test with (PR [#325](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/325)).
 
 * **Documentation**:
     * User Guide:
