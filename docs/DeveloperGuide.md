@@ -819,10 +819,14 @@ More information on usage: [find course command](UserGuide.html#finding-a-course
     4. Test case: `find cs 20`<br>
        Expected: All courses with course name containing `CS` and/or `20` are shown.
 
-    5. Incorrect find commands to try: `find`, `find c/`, etc.<br>
-       Expected: No student contacts filtered. Error details shown in the error message.
+    4. Test case: `find n/cs`<br>
+       Expected: All courses with course name containing `n/cs` are shown.
+       Note: The `find` command in the `home` stage does not necessitate any prefixes; therefore, the prefixes used will be interpreted as the search criteria.
 
-2. Finding a student contact while the student contact list is being filtered.
+    5. Incorrect find commands to try: `find`<br>
+       Expected: No course filtered. Error details shown in the error message.
+
+2. Finding a course while the course list is being filtered.
 
     1. Prerequisites: Ensure the current page is the home page using the `home` command. Filter the courses by course name using the `find` command.
 
@@ -830,7 +834,7 @@ More information on usage: [find course command](UserGuide.html#finding-a-course
        Expected: If the course list was initially filtered with `find s` before `find 20`, all courses with course name containing `s` and `20` are shown.
 
     3. Incorrect find commands to try: `find`, `find c/`, etc.<br>
-       Expected: No student contacts filtered.<br>
+       Expected: No course filtered.<br>
        Error details shown in the error message.
 
 ### Selecting a course
@@ -970,31 +974,75 @@ More information on usage: [sort students command](UserGuide.html#sorting-all-st
       Expected: Similar to previous.<br>
       Note that sorting and filtering can be stacked. Sorting is done on top of the currently filtered list.
 
+### Finding students by different criterias
+Command: `find`
+
+More information on usage: [find Finding a student](#finding-a-student--find)
+
+1. Finding a student while all students are being shown.
+
+    1. Prerequisites: Ensure the current page is the home page using the `course` command. List all students using the `reset` command.
+
+    2. Test case: `find n/ry` or `find n/RY`<br>
+       Expected: All students with name containing `ry` are shown. Casing of letters are ignored.
+
+    3. Test case: `find r/20`<br>
+       Expected: All students with remark containing `20` are shown.
+
+    4. Test case: `find r/cs 20`<br>
+       Expected: All students with remark containing both `cs` and `20`, in any order, are shown.
+
+    5. Incorrect find commands to try: `find`, `find n/` `find n/John r/homework`, etc.<br>
+       Expected: No student filtered. Error details shown in the error message.
+
+2. Finding a student while the student list is being filtered.
+
+    1. Prerequisites: Ensure the current page is the home page using the `course` command. Filter the students using the `find` command.
+
+    2. Test case: `find n/Jason`<br>
+       Expected: If the student list was initially filtered with `find r/homework` before `find n/Jason`, all students with their remark containing `homework` and name containing `Jason` are shown.
+
+    3. Incorrect find commands to try: `find`, `find n/` `find n/John r/homework`, etc.<br>
+       Expected: No student filtered. Error details shown in the error message.
+
+
 --------------------------------------------------------------------------------------------------------------------
 ## **Appendix: Effort**
 
-### Difficulty Level:
+### Difficulty Level
 While AB3 focused on managing a single entity type of `Person` in an addressbook,
 CodeSphere deals with multiple entity types that are linked to each other, namely `Course` and `Student`.
 
-### Effort required:
+### Effort required
 
-### Achievements of the project:
+### Achievements of the project
 
 --------------------------------------------------------------------------------------------------------------------
 ## **Appendix: Planned Enhancements**
-1. While in the course selection page, users are unable to immediately reselect another course by utilising the `select`
-    command. While this was originally not intended for our product as the typical workflow for users would be returning 
-    to the course page through `home` and re-selecting from there, we recognise that users may wish to immediately reselect
-    a course while viewing a separate course. We plan to make the `select` command work regardless of which page that 
-    the user is currently viewing.
-2. The command prefix for `edit` and `remark` is unable to properly differentiate between `/` symbols used as text or as a prefix,
-    and currently takes the endmost prefix as the command.
-    For example, `edit 1 r/e/b` should be interpreted as '`edit` index `1` with the `remark` `e/b`', but will be currently 
-    taken as '`edit` index `1` with the new `email` `/b`'. We plan to change the parser of these commands to take the firstmost prefix
-3. Our application is currently unable to recognise invalid prefix commands that are written behind a valid prefix command --
-    instead it produces an 'invalid format' error for the valid prefix command.
-    For example, `add c/cs2100 t/good` gives the error "Course code should contain a two or three letter prefix, a four digit course code,
-    and an optional one letter suffix", when it should recognise that "t/" should not be included and produce an appropriate error message.
-    We plan to make the error message accurately reflect the invalid prefix command, such like (in the example above) displaying
-    "Add course command should not contain the prefix `t/`".
+
+### Select from Course Page
+
+While in the course selection page, users are unable to immediately reselect another course by utilising the `select` command. 
+
+While this was originally not intended for our product as the typical workflow for users would be returning to the course page through `home` and re-selecting from there, we recognise that users may wish to immediately reselect
+a course while viewing a separate course. 
+
+We plan to make the `select` command work regardless of which page that the user is currently viewing.
+
+### Parsing with / character in edit and find command
+
+The command prefix for `edit` and `find` is unable to properly differentiate when a `/` symbol is used with the character prior to it resembling a prefix character.
+
+For example, `edit 1 r/e/b` should be interpreted as '`edit` index `1` with the `remark` `e/b`' but is currently taken as '`edit` index `1` with the new `email` `/b`'. 
+Another example is when using the `find` command for students. `find r/homework answer is e/d` will result in a duplicate prefix command error.
+
+We plan to change the parser of these commands to prioritize the firstmost prefix. This adjustment will resolve the issue for the `find` command. 
+For `edit`, we intend to introduce more specific prefixes to allow greater versatility for users editing the fields. For instance, we could change `e/` to `email!/`. The likelihood of such a word being used for the other criteria is minimal and would effectively solve the problem.
+
+### More specific command errors
+
+Our application is currently unable to recognise invalid prefix commands that are written behind a valid prefix command -- instead it produces an 'invalid format' error for the valid prefix command.
+
+For example, `add c/cs2100 t/good` gives the error "Course code should contain a two or three letter prefix, a four digit course code, and an optional one letter suffix", when it should recognise that "t/" should not be included and produce an appropriate error message.
+
+We plan to make the error message accurately reflect the invalid prefix command, such like (in the example above) displaying "Add course command should not contain the prefix `t/`".
