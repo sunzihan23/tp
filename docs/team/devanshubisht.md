@@ -57,5 +57,5 @@ Given below are my contributions to the project.
   * Set up MarkBind initially and then changed to Jerkyll for product website.(PR [#71](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/71)).
 
 * **Community**:
-    * Reviewed PRs, and suggested improvements for things like Javadoc style and code quality.
+    * Reviewed PRs, and suggested improvements for Javadoc style and code quality.
     * Reported bugs for other teams during PE-D and suggested possible improvements. Can be seen [here](https://github.com/devanshubisht/ped).
