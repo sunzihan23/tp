@@ -1,4 +1,3 @@
-//@@author phiphi-tan
 package seedu.codesphere.model.student;
 
 import static java.util.Objects.requireNonNull;

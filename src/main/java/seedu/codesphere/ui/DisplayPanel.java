@@ -43,6 +43,7 @@ public class DisplayPanel extends UiComponent<Region> {
         splashPanel = new SplashPanel();
         panelPlaceholder.getChildren().add(splashPanel.getRoot());
 
+        // Code below inspired by https://genuinecoder.com/javafx-splash-screen-loading-screen/
         FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), panelPlaceholder);
         fadeIn.setFromValue(0);
         fadeIn.setToValue(1);

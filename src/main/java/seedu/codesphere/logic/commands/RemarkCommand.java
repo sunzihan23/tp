@@ -1,4 +1,3 @@
-//@@author phiphi-tan
 package seedu.codesphere.logic.commands;
 
 import static seedu.codesphere.commons.util.CollectionUtil.requireAllNonNull;

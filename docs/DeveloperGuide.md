@@ -468,6 +468,56 @@ The following activity diagram summarizes what happens when a user executes the 
 
 These considerations and alternatives should be weighed based on the specific requirements and expected user experience in your application.
 You can copy and paste this code into a Markdown editor or file to render the formatted text.
+--------------------------------------------------------------------------------------------------------------------
+## **Implementation of other notable features**
+
+### Input History
+
+#### About the input history feature
+CodeSphere allows all the user's previously entered text (referred to as 'input') to be saved and retrieved at a later date.
+Retrieval of this input history is through the 'UP' and 'DOWN' keys on the keyboard.
+
+#### Handling user input
+When the user inputs text through the `CommandBox`, the program will see if the input returns a successful command
+or throws an exception (which causes the program to display an error such as 'Unknown command').
+These inputs will be stored in `InputHistory` as a text alongside an indicator of whether the text was a valid input or not.
+
+`InputHistory` contains a pointer that will keep track of which command in the history is being displayed so that
+it can display the relevant 'previous' and 'next' command when required.
+Entering any input will cause the pointer in `InputHistory` to be reset to display the latest command upon the next retrieval.
+
+#### Handling key presses
+When an 'UP' arrow key is registered: The `InputHistory` will display the command that was entered previously (chronologically).
+If the command history is at its earliest command, the earliest command will continue to be displayed.
+
+When an 'DOWN' arrow key is registered: The `InputHistory` will display the command that was entered next (chronologically).
+If the command history is at its latest command, the `CommandBox` will be set to blank.
+
+#### Displaying of result
+When an input is displayed, it will be displayed on the `CommandBox` and overwrite any text previously typed into it.
+If the input is recognised as invalid, the text displayed will be coloured red, or otherwise it will be displayed in the default white colour.
+
+#### Design considerations
+**Aspect:** Whether we should store and display all user inputs or just valid commands
+
+- *Currently:* All user inputs are stored and displayed, whether invalid or valid commands.
+- *Alternative 1:* Only valid user inputs will be stored. Invalid commands will be ignored by `InputHistory`.
+
+**Pros and Cons:**
+- *Currently:*
+    - **Pros:**
+      - Users can easily view and edit any invalid commands previously entered.
+    - **Cons:**
+      - May result in a larger input history especially if many invalid commands were typed by the user,
+      which impedes the user from easily finding the history of valid command inputs.
+
+- *Alternative 1:*
+    - **Pros:**
+      - Allows the users to view all valid inputs quickly, which acts as a 'command log' to track all their
+      previously entered commands.
+    - **Cons:**
+      - Users are unable to edit or view previously entered inputs, requiring them to re-type their entire command if
+      they initially inputted it wrongly
 
 --------------------------------------------------------------------------------------------------------------------
 ## **Documentation, logging, testing, configurations, dev-ops**
@@ -919,3 +969,32 @@ More information on usage: [sort students command](UserGuide.html#sorting-all-st
    2. Test case: Similar to previous.<br>
       Expected: Similar to previous.<br>
       Note that sorting and filtering can be stacked. Sorting is done on top of the currently filtered list.
+
+--------------------------------------------------------------------------------------------------------------------
+## **Appendix: Effort**
+
+### Difficulty Level:
+While AB3 focused on managing a single entity type of `Person` in an addressbook,
+CodeSphere deals with multiple entity types that are linked to each other, namely `Course` and `Student`.
+
+### Effort required:
+
+### Achievements of the project:
+
+--------------------------------------------------------------------------------------------------------------------
+## **Appendix: Planned Enhancements**
+1. While in the course selection page, users are unable to immediately reselect another course by utilising the `select`
+    command. While this was originally not intended for our product as the typical workflow for users would be returning 
+    to the course page through `home` and re-selecting from there, we recognise that users may wish to immediately reselect
+    a course while viewing a separate course. We plan to make the `select` command work regardless of which page that 
+    the user is currently viewing.
+2. The command prefix for `edit` and `remark` is unable to properly differentiate between `/` symbols used as text or as a prefix,
+    and currently takes the endmost prefix as the command.
+    For example, `edit 1 r/e/b` should be interpreted as '`edit` index `1` with the `remark` `e/b`', but will be currently 
+    taken as '`edit` index `1` with the new `email` `/b`'. We plan to change the parser of these commands to take the firstmost prefix
+3. Our application is currently unable to recognise invalid prefix commands that are written behind a valid prefix command --
+    instead it produces an 'invalid format' error for the valid prefix command.
+    For example, `add c/cs2100 t/good` gives the error "Course code should contain a two or three letter prefix, a four digit course code,
+    and an optional one letter suffix", when it should recognise that "t/" should not be included and produce an appropriate error message.
+    We plan to make the error message accurately reflect the invalid prefix command, such like (in the example above) displaying
+    "Add course command should not contain the prefix `t/`".
