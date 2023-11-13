@@ -516,7 +516,6 @@ Find a student **by a certain field** from the list of students you are overseei
 
 **Command failure:** Users enter the command with incorrect formatting, resulting in an error message shown to the user.
 
-<div style="page-break-after: always;"></div>
 
 ### List all pending questions : `list`
 
@@ -577,8 +576,6 @@ Adds a pending question to a specified student from the list of students of a co
 **Command succeeds:** Success message shown, pending question successfully added and updated in database, change in GUI.
 
 **Command failure:** Incorrect format results in an error message shown and pending question is not added to the student.
-
-<div style="page-break-after: always;"></div>
 
 ### Removing a remark/pending question of a student : `remove`
 
