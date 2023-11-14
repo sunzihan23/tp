@@ -121,6 +121,8 @@ This action flow will loop until the user decides to exit the application.
 During the application's runtime, the user may  also exit the application through the MainWindow's top panel buttons (File -> Exit)
 or the red '**x**' button on the top right of the application screen.
 
+<div style="page-break-after: always"></div>
+
 ### Logic component
 
 **API** : [`Logic.java`](https://github.com/AY2324S1-CS2103T-W15-4/tp/blob/master/src/main/java/seedu/address/logic/Logic.java)
@@ -247,7 +249,7 @@ a course as long as the new course name is not a duplicate in the existing cours
 2. The `EditCourseCommand` creates an `editedCourse` with the new course name.
 3. `EditCourseCommand` then calls `Model#hasCourse()` to check for duplicate courses. If duplicate present, a `CommandException` is thrown.
 4. `Model#setCourse()` will then be called to replace the existing course with the `editedCourse`.
-5. `Model#updateFilteredList()` will then be called to update the filtered course list.
+5. `Model#updateFilteredCourseList()` will then be called to update the filtered course list.
 
 #### Displaying of result
 1. Lastly, the `EditCourseCommand` creates a `CommandResult` with a success message and return it to the `LogicManager` to complete the command execution.
@@ -279,7 +281,7 @@ a course as long as the index is valid.
 1. The `LogicManager` executes the `DeleteCourseCommand`.
 2. The `DeleteCourseCommand` calls `Model#getFilteredCourseList()` to get an unmodifiable view of the filtered course list to determine the course to delete based on the input INDEX.
 3. `Model#deleteCourse()` will then be called to delete the target course from the displayed course list.
-4. `Model#resetFilteredList()` will then be called to update the filtered course list.
+4. `Model#resetFilteredCourseList()` will then be called to update the filtered course list.
 
 #### Displaying of result
 1. Lastly, the `DeleteCourseCommand` creates a `CommandResult` with a success message and return it to the `LogicManager` to complete the command execution.
@@ -293,27 +295,6 @@ The following activity diagram summarises what happens when a user executes the 
 
 --------------------------------------------------------------------------------------------------------------------
 ## **Implementation of Course Commands**
-
-### Add a student
-After selecting a `Course` from the `UniqueCourseList`,  `Student` objects can be added into the `UniqueStudentList` of the `Course`.  Compulsory fields for the `AddCommand` include `Name`, `Email` and a performance `Tag`. The optional `Remark` and `PendingQuestion` fields cannot be added using the `AddCommand`.
-Given below is an example usage scenario and how the adding mechanism works. We will skip to where the `AddCommand#execute()` method is called.
-
-* Step 1. The `AddCommand` object’s `execute()` method is called.
-* Step 2. `StageManager` is used to obtain the current `Course` selected.
-* Step 3. A check for duplicates in the `UniqueStudentList` of the current `Course` is done. If the new `Student` to be added already exists, a `CommandException` is thrown.
-* Step 4. The new `Student` is added into the `UniqueStudentList` of the current `Course`.
-
-
-### Edit a student
-`Student` objects are stored in their respective Course’s `UniqueStudentList`. The details (name, email, remark, pending question, tag) of a student in a course can be edited by changing the fields of the `Student` object.
-Given below is an example usage scenario and how the editing mechanism is carried out on a `Student` in a course. We will skip to where the `EditCommand#execute()` method is called.
-
-* Step 1. The `EditCommand` object’s `execute()` method is called.
-* Step 2. The index provided is checked to be within bounds of the course’s student list. If it is not, a `CommandException` is thrown.
-* Step 3. A new `Student` object, `editedStudent` is created with the edited inputs.
-* Step 4. A check for duplicates in the current course is done. If there is a duplicate, a `CommandException` is thrown.
-* Step 5. The original student in the current course’s student list is replaced with `editedStudent`.
-
 
 ### Sort student list for a selected course feature
 
