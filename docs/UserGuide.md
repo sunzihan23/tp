@@ -664,17 +664,17 @@ If your changes to the data file makes it invalid, CodeSphere will overwrite all
 
 ### Home Page
 
-| Action                | Format, Examples                                           |
-|-----------------------|------------------------------------------------------------|
-| **Help**              | `help`                                                     |
-| **Add Course**        | `add c/COURSENAME`<br/> e.g. `add c/CS1101S`               |
-| **Edit Course**       | `edit INDEX c/NEW_COURSENAME`<br/> e.g. `edit 1 c/CS1231S` |
-| **Delete Course**     | `delete INDEX` <br/> e.g. `delete 1`                       |
-| **Clear All Courses** | `clear`                                                    |
-| **Select Course**     | `select INDEX` <br/> e.g. `select 1`                       |
-| **Find Course**       | `find KEYWORD` <br/> e.g. `find CS`                        |
-| **Reset Course List** | `reset`                                                    |
-| **Exit**              | `exit`                                                     |
+| Action                | Format, Examples                                            |
+|-----------------------|-------------------------------------------------------------|
+| **Help**              | `help`                                                      |
+| **Add Course**        | `add c/COURSENAME`<br/> e.g. `add c/CS1101S`                |
+| **Edit Course**       | `edit INDEX c/NEW_COURSE_NAME`<br/> e.g. `edit 1 c/CS1231S` |
+| **Delete Course**     | `delete INDEX` <br/> e.g. `delete 1`                        |
+| **Clear All Courses** | `clear`                                                     |
+| **Select Course**     | `select INDEX` <br/> e.g. `select 1`                        |
+| **Find Course**       | `find KEYWORD` <br/> e.g. `find CS`                         |
+| **Reset Course List** | `reset`                                                     |
+| **Exit**              | `exit`                                                      |
 
 [_Back to Top_](#table-of-contents)
 
@@ -682,22 +682,22 @@ If your changes to the data file makes it invalid, CodeSphere will overwrite all
 
 ### Course Page
 
-| Action                                   | Format, Examples                                                                       |
-|------------------------------------------|----------------------------------------------------------------------------------------|
-| **Help**                                 | `help`                                                                                 |
-| **Add Student**                          | `add n/NAME e/EMAIL t/ENUM_TAG`<br/>e.g. `add n/Susan Tan e/e0123456@u.nus.edu t/GOOD` |
-| **Edit Student**                         | `edit INDEX [n/NAME] [e/EMAIL] [t/ENUM_TAG]`<br/> e.g. `edit 1 n/JOHN`                 |
-| **Delete Student**                       | `delete INDEX` <br/> e.g. `delete 1`                                                   |
-| **Clear All Students**                   | `clear`                                                                                |
-| **Reset Student List**                   | `reset`                                                                                |
-| **Sort Students**                        | `sort s/SORT_CRITERIA` <br/> e.g. `sort s/name`                                        |                                                                                        |
-| **Find Students**                        | `find [n/NAME] [e/EMAIL] [t/TAG] [pg/QUESTION] [r/REMARK]` <br/> e.g. `find n/John`    |
-| **List Students with Pending Questions** | `list pq/`                                                                             |
-| **Add Remark**                           | `remark INDEX r/REMARK`<br/>e.g. `remark 1 r/needs more help`                          |
-| **Add Pending Question**                 | `pq INDEX r/PENDINGQUESTION`<br/>e.g. `pq 1 pq/What is a logic gate?`                  |
-| **Remove Remark/<br>Pending Question**   | `remove INDEX [r/] [pq/]` <br/> e.g. `remove 2 r/`                                     |
-| **Home**                                 | `home`                                                                                 |
-| **Exit**                                 | `exit`                                                                                 |
+| Action                                   | Format, Examples                                                                            |
+|------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Help**                                 | `help`                                                                                      |
+| **Add Student**                          | `add n/NAME e/EMAIL t/TAG`<br/>e.g. `add n/Susan Tan e/e0123456@u.nus.edu t/GOOD`           |
+| **Edit Student**                         | `edit INDEX [n/NAME] [e/EMAIL] [t/TAG]`<br/> e.g. `edit 1 n/JOHN`                           |
+| **Delete Student**                       | `delete INDEX` <br/> e.g. `delete 1`                                                        |
+| **Clear All Students**                   | `clear`                                                                                     |
+| **Reset Student List**                   | `reset`                                                                                     |
+| **Sort Students**                        | `sort s/SORT_CRITERIA` <br/> e.g. `sort s/name`                                             |                                                                                        |
+| **Find Students**                        | `find [n/NAME] [e/EMAIL] [t/TAG] [pq/PENDING_QUESTION] [r/REMARK]` <br/> e.g. `find n/John` |
+| **List Students with Pending Questions** | `list pq/`                                                                                  |
+| **Add Remark**                           | `remark INDEX r/REMARK`<br/>e.g. `remark 1 r/needs more help`                               |
+| **Add Pending Question**                 | `pq INDEX r/PENDING_QUESTION`<br/>e.g. `pq 1 pq/What is a logic gate?`                      |
+| **Remove Remark/<br>Pending Question**   | `remove INDEX [r/] [pq/]` <br/> e.g. `remove 2 r/`                                          |
+| **Home**                                 | `home`                                                                                      |
+| **Exit**                                 | `exit`                                                                                      |
 
 [_Back to Top_](#table-of-contents)
 
