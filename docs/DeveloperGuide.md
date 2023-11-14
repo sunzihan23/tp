@@ -1010,12 +1010,42 @@ More information on usage: [find Finding a student](#finding-a-student--find)
 ## **Appendix: Effort**
 
 ### Difficulty Level
-While AB3 focused on managing a single entity type of `Person` in an addressbook,
+We found that the difficulty level of the project was slightly more challenging compared to CS2103T's Individual Project (iP).
+While the workload was similar to the iP, there was an additional level of team management required (such as division of roles and
+resolving code conflicts) that made meeting target milestones slightly more challenging. 
+
+Furthermore, while AB3 focused on managing a single entity type of `Person` in an address book,
 CodeSphere deals with multiple entity types that are linked to each other, namely `Course` and `Student`.
 
-### Effort required
+### Challenges faced
+One challenge we faced early on was a 'repetitive' command usage, as the simultaneous handling of two classes
+`Course` and `Student` meant that a lot of commands were duplicated
+(e.g. `AddCourse` vs `AddStudent`, `EditCourse` vs `EditStudent` ) .
+This was eventually resolved through utilising a StageManager
+(inspired by the above acknowledged project [Waddle](https://ay2223s1-cs2103t-w11-4.github.io/tp/)),
+which handles the logic of which class was currently viewed as 'active'; the application will now determine the appropriate action to take
+for a command (i.e. `add` will now perform `addStudent` or `addCourse` depending on which stage is active).
 
-### Achievements of the project
+### Effort required
+- **Program architecture:** CodeSphere built upon the existing project structure of AB3, adding in many additional commands and
+    structures (`course`, `pending questions`, `filters`) to support our application.
+    Through constant iterative upgrades and feedback, we managed to build and encapsulate our 
+    designs into the application that CodeSphere is today.
+- **UI / UX improvements:** While working on improving our application architecture and logic, we also simultaneously
+  made significant improvements to the graphical user interface (GUI), such as intuitive colour coding schemes and logos,
+  as well as the general user experience (UX) such as accessing the user's input history.
+- **Bug Testing and Fixing:** During the development of our application, we ensured constant developer testing by
+    writing and editing test cases for new features / changed implementations of any code that we wrote. Our goal for
+  unit and integration testing was to aim for >70% code coverage (as we do not test for UI classes).  
+  After development of our application was finished, we also released an early version to be bug tested in
+  Practical Exam's dry run (PE-D) by external reviewers, and then worked hard to find and fix any issues that were raised during
+  the PE-D.
+- **Documentation:** Throughout our entire project, we have been carefully documenting our changes to be able to provide 
+    comprehensive and concise documentation for both users (*User Guide*) and other developers (*Developer Guide*) that may be viewing our application design.
+    This included providing relevant screenshots, diagrams and various other supporting text / images to guide the reader 
+    to better understand the project and answer any questions they may have. We have also ensured that the project website 
+    and our individual portfolios have been kept updated.  
+    
 
 --------------------------------------------------------------------------------------------------------------------
 ## **Appendix: Planned Enhancements**
@@ -1046,3 +1076,21 @@ Our application is currently unable to recognise invalid prefix commands that ar
 For example, `add c/cs2100 t/good` gives the error "Course code should contain a two or three letter prefix, a four digit course code, and an optional one letter suffix", when it should recognise that "t/" should not be included and produce an appropriate error message.
 
 We plan to make the error message accurately reflect the invalid prefix command, such like (in the example above) displaying "Add course command should not contain the prefix `t/`".
+
+### UI Colour Scheme
+
+Our application currently follows a similar 'dark theme' colour scheme as was set by AB3, as we found it to be the most 
+aesthetically pleasing to view. However, we recognise that different users may want to customise or view the application 
+differently. We would thus like to introduce more colour schemes that may also benefit certain user groups (etc. making our labels dichromatism-friendly).
+
+### UI Font Size
+
+Our application currently has a set default font type and sizing, which may not be readable for all users. In the future,
+we plan to introduce an adjustable font types/sizing so that users can adjust it to meet their own individual needs.
+
+### Changing Tag Sets
+
+The tags for a `Student` in our application are set to `GOOD`, `AVERAGE` and `POOR`, and work as a performance indicator.
+However, such tags may be too subjective for users if they wish to categorise their students according to a more objective
+tag scheme, but the tags are currently unable to be changed to anything other than these 3 values. We plan to allow users to
+define their own tags (as well as corresponding colour schemes), so that tags are customisable according to the user's unique situation.
