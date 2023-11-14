@@ -9,6 +9,7 @@ import seedu.codesphere.logic.stagemanager.Stages;
 import seedu.codesphere.model.Model;
 import seedu.codesphere.model.course.Course;
 
+//Solution below adapted from https://github.com/AY2223S1-CS2103T-W11-4/tp/blob/master/src/main/java/seedu/waddle/logic/commands/SelectCommand.java
 /**
  * Moves to viewing of the selected course.
  */
