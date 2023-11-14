@@ -99,8 +99,8 @@ And to find out more about what else CodeSphere can do for you, continue to read
 * `add c/CS1101S` : Adds a course named `CS1101S` to the course list.
 * `edit 1 c/CS1231S` : Updates the course name of the first course displayed with the new course name specified.
 * `delete 3` :
-  1. If you are currently on the home page, it deletes the third course shown in the current list.
-  2. If you are currently on the course page, it deletes the third student shown in the current list.
+  * If you are currently on the home page, it deletes the third course shown in the current list. 
+  * If you are currently on the course page, it deletes the third student shown in the current list.
 * `exit` : Exits the application.
 
 For a more detailed walk-through on how to use CodeSphere to start managing your students as a TA, head to [Tutorial for Beginners](#tutorial-for-beginners).
