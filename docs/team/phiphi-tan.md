@@ -36,23 +36,27 @@ Given below are my contributions to the project.
   * To be added soon.
 
 * **Enhancements to existing features**:
-  * **UI Enhancement**: Course list panel (PR [#82](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/82))
-    * With the enhancements made over the AB3 codebase, the User Interface had to be updated respectively
-      to fit with the new changes and features added.
-  * **UI Enhancement**: Combined panel sidebar (PR [#96](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/96))
-    * Provides a sidebar of all courses alongside the view of the particular student list of a selected course
-      The selected course in the side panel is highlighted while the other courses are faded.
-    * The combined panel serves as a direct upgrade to the previous 'Student List' panel
-      by creating a 'sidebar' that allows users to still see summary statistics of other courses while viewing students in
-      a certain course.
-  * **UI Enhancement**: CodeSphere UI Upgrades (PR [#136](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/136))
-    * User Interface was updated from AB3 to better fit our CodeSphere application (fonts, colours, team logo, icons etc.)
-    * Resizing application window will have UI items adjust and text wrap accordingly
-      (PRs [#150](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/150), [#301](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/301))
-    * Help window contains additional button that directly opens the link in the user's default web browser.
-      Header 'help' option now contains links to the User Guide, Developer Guide and Team GitHub Repository that will automatically
-      open in the default browsers, and can be selected with keyboard shortcuts *F1*, *F2* and *F3* respectively.
-      (PR [#140](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/140))
+  * **UI Enhancements**: Compared to AB3, making the following UI enhancements greatly improved the UI/UX of our application.
+      Implementing these UI enhancements requires a comprehensive understanding of JavaFX, FXML and CSS, as well an understanding of
+      the project's observer patterns and when to update UI elements.
+      Changing the UI features requires an extensive knowledge of user design constantly iterated and updated with peer feedback.
+    * Course list panel (PR [#82](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/82))
+      * With the enhancements made over the AB3 codebase, the User Interface had to be updated respectively
+        to fit with the addition of the `Course` class. This UI change enables the user to view all the courses initially.
+    * Combined panel sidebar (PR [#96](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/96))
+      * Provides a sidebar of all courses alongside the view of the particular student list of a selected course
+        The selected course in the side panel is highlighted while the other courses are faded.
+      * The combined panel serves as a direct upgrade to the previous 'Student List' panel
+        by creating a 'sidebar' that enables the user to maintain a view of the summary statistics of other courses while working on a separate course,
+        greatly increasing the overall user experience.
+    * Help window and header panel (PR [#140](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/140))
+      * Help window now contains additional button that directly opens the link in the user's default web browser.
+        Header 'help' option now contains links to the User Guide, Developer Guide and Team GitHub Repository that will automatically
+        open in the default browsers, and can be selected with keyboard shortcuts *F1*, *F2* and *F3* respectively.
+    * CodeSphere UI Upgrades (PR [#136](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/136))
+      * User Interface was updated from AB3 to better fit our CodeSphere application (fonts, colours, team logo, icons etc.)
+      * Resizing application window will have UI items adjust and text wrap accordingly
+        (PRs [#150](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/150), [#301](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/301))
   * Modified existing test cases and added new tests (PRs [#249](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/249),
     [#264](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/264), [#265](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/265),
     [#274](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/274)).
@@ -67,7 +71,9 @@ Given below are my contributions to the project.
     * Updated and rewrote the portion on User Interface (UI) with new class diagrams as well as in-depth
       explanations regarding the different UI components that were added in
       (PR [#118](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/118)).
+    * Added in the *Appendix: Effort* that details an estimation on the total project effort.
+    * Added in the *Appendix: Planned Enhancements* that lists fixes that we propose to add in the near future.
 
 * **Community**:
-  * Reviewed PRs, and suggested improvements for things like Javadoc style and code quality.
+  * Reviewed PRs, and suggested improvements for project management such as adhering to Javadocs requirements and code quality.
   * Reported bugs for team *CS2103T-W13-3* during PE-D and suggested possible areas of improvements
