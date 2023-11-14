@@ -699,8 +699,6 @@ If your changes to the data file makes it invalid, CodeSphere will overwrite all
 | **Home**                                 | `home`                                                                                      |
 | **Exit**                                 | `exit`                                                                                      |
 
-[_Back to Top_](#table-of-contents)
-
 ## **Glossary**
 
 | Term/Keyword                       | Definition                                                                                                 |
