@@ -186,9 +186,9 @@ And with that, you have now successfully created your first course, added a few 
 you have previously entered.
 
 Now that you know how CodeSphere works, feel free to explore some other features that have been specially curated for you to manage your students with ease, such as
-[listing out all students with pending questions](#list-all-pending-questions-list),
-[sorting the students by different criteria](#sorting-all-students-sort) or even
-[finding students with certain keywords in selected field](#finding-a-student-find).
+[listing out all students with pending questions](#list-all-pending-questions--list),
+[sorting the students by different criteria](#sorting-all-students--sort) or even
+[finding students with certain keywords in selected field](#finding-a-student--find).
 
 [_Back to Top_](#table-of-contents)
 <div style="page-break-after: always"></div>
