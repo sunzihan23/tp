@@ -76,6 +76,8 @@ as illustrated in the (partial) class diagram below.
 
 The sections below give more details of each component.
 
+<div style="page-break-after: always"></div>
+
 ### UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S1-CS2103T-W15-4/tp/blob/master/src/main/java/seedu/address/ui/Ui.java)
@@ -153,6 +155,8 @@ How the parsing works:
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 * All `XYZCommandParser` classes throw a ParseException if there are any errors with the arguments.
 
+<div style="page-break-after: always"></div>
+
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2324S1-CS2103T-W15-4/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 
@@ -165,6 +169,8 @@ The `Model` component,
 * stores the currently 'selected course's' `Student` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Student>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components).
+
+<div style="page-break-after: always"></div>
 
 ### Storage component
 
@@ -183,12 +189,15 @@ These user inputs are stored in chronological order and are accessed through the
 All user inputs will be stored in the InputStorage, and will also contain the data whether the input was accepted as a
 valid command or not. Handling of this input validity will be done by the UI component.
 
+<div style="page-break-after: always"></div>
 
 ### Common classes
 
 Classes used by multiple components are in the `seedu.codesphere.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Implementation of Home Commands**
 
 This section describes some noteworthy details on how certain features on the Home Page are implemented.
@@ -224,6 +233,7 @@ The following sequence diagram shows how the `add` mechanism in the home page wo
 The following activity diagram summaries what happens when a user executes the `add` command:
 ![AddCourseActivityDiagram](images/AddCourseActivityDiagram.png)
 
+<div style="page-break-after: always"></div>
 
 ### Edit a course
 #### About the edit course feature
@@ -261,6 +271,7 @@ The following sequence diagram shows how the `edit` mechanism in the home page w
 The following activity diagram summarises what happens when a user executes the `edit` command:
 ![EditCourseActivityDiagram](images/EditCourseActivityDiagram.png)
 
+<div style="page-break-after: always"></div>
 
 ### Delete a course
 #### About the delete course feature
@@ -294,6 +305,8 @@ The following activity diagram summarises what happens when a user executes the 
 ![DeleteCourseActivityDiagram](images/DeleteCourseActivityDiagram.png)
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Implementation of Course Commands**
 
 ### Sort student list for a selected course feature
@@ -356,6 +369,8 @@ The following activity diagram summaries what happens when a user executes the `
     - **Pros:** Users have the ability to sort by any field.
     - **Cons:** Allowing sorting by the other student fields add very little value to the users. Sorting by `NAME` can be useful for administrative purposes, while sorting by `TAG` can be useful in helping the user identify the group of weaker students. However, it is unlikely that users will need to see the student list sorted by`EMAIL`, `PENDING_QUESTION` or `REMARK` fields.
 
+<div style="page-break-after: always"></div>
+
 ### Add a pending question to a student from a selected course
 
 #### About the adding a pending question feature
@@ -391,6 +406,8 @@ The following sequence diagram shows how the `pq` mechanism works:
 
 The following activity diagram summarises what happens when a user executes the `pq` command:
 ![PqActivityDiagram](images/PendingQuestionCommandActivityDiagram.png)
+
+<div style="page-break-after: always"></div>
 
 ### Finding a student from a selected course
 
@@ -450,6 +467,8 @@ The following activity diagram summarizes what happens when a user executes the 
 These considerations and alternatives should be weighed based on the specific requirements and expected user experience in your application.
 You can copy and paste this code into a Markdown editor or file to render the formatted text.
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Implementation of other notable features**
 
 ### Input History
@@ -501,6 +520,8 @@ If the input is recognised as invalid, the text displayed will be coloured red, 
       they initially inputted it wrongly
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Documentation, logging, testing, configurations, dev-ops**
 * [Documentation guide](Documentation.md)
 * [Logging guide](Logging.md)
@@ -509,6 +530,8 @@ If the input is recognised as invalid, the text displayed will be coloured red, 
 * [DevOps guide](DevOps.md)
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Appendix: Requirements**
 
 ### Product scope
@@ -522,6 +545,8 @@ If the input is recognised as invalid, the text displayed will be coloured red, 
 * is reasonably comfortable using CLI apps
 
 **Value proposition**: provides an easy way to manage students, allowing for customised support to keep tabs on each student.
+
+<div style="page-break-after: always"></div>
 
 ### User stories
 
@@ -544,6 +569,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * `   | user      | view usage instructions                                                 | know how to use the app when I am unfamiliar with it                    |
 | `*`      | user      | list out all students in a course with unanswered pending questions     | efficiently manage and respond to queries                               |
 | `*`      | user      | reset the student list to its original order                            | view the original student list after filtering or sorting               |
+
+<div style="page-break-after: always"></div>
 
 ### Use cases
 
@@ -649,6 +676,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 1b1. CodeSphere displays an error message.<br>
       Use case resumes at step 1.
 
+<div style="page-break-after: always"></div>
+
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
@@ -663,14 +692,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 10. The application should not depend on a remote server so that users can use the application at anytime.
 11. The application is not required to support multiple users on a single device.
 
-*{More to be added}*
-
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
 * **CLI**: Command Line Interface. A way to interact with a computer or software by typing text-based commands, rather than using a mouse and graphical icons.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Appendix: Instructions for manual testing**
 
 This is a list of prefixes used for manual testing.
@@ -692,6 +721,8 @@ testers are expected to do more *exploratory* testing.
 
 </div>
 
+<div style="page-break-after: always"></div>
+
 ### Launch and shutdown
 
 1. Initial launch.
@@ -710,6 +741,8 @@ testers are expected to do more *exploratory* testing.
 
     2. Re-launch the app by running the `java -jar CodeSphere.jar` command again.<br>
        Expected: The most recent window size and location is retained.
+
+<div style="page-break-after: always"></div>
 
 ### Clearing all data
 Command: `clear`
@@ -730,6 +763,7 @@ More information on usages: [clear courses command](UserGuide.html#clearing-all-
    2. Test case: `clear`<br>
       Expected: All students are cleared from the student list for the selected course.
 
+<div style="page-break-after: always"></div>
 
 ### Adding a course
 Command: `add`
@@ -754,6 +788,8 @@ More information on usage: [add course command](UserGuide.html#adding-a-course--
 
    2. Test case: Similar to previous.<br>
       Expected: Similar to previous.
+
+<div style="page-break-after: always"></div>
 
 ### Deleting a course
 Command: `delete`
@@ -781,6 +817,8 @@ More information on usage: [delete course command](UserGuide.html#deleting-a-cou
 
     2. Test case: Similar to previous.<br>
        Expected: Similar to previous.
+
+<div style="page-break-after: always"></div>
 
 ### Finding courses by course name
 Command: `find`
@@ -818,6 +856,8 @@ More information on usage: [find course command](UserGuide.html#finding-a-course
        Expected: No course filtered.<br>
        Error details shown in the error message.
 
+<div style="page-break-after: always"></div>
+
 ### Selecting a course
 Command: `select`
 
@@ -843,6 +883,7 @@ More information on usage: [select course command](UserGuide.html#selecting-a-co
     2. Test case: Similar to previous.<br>
        Expected: Similar to previous.
 
+<div style="page-break-after: always"></div>
 
 ### Adding a student
 Command: `add`
@@ -882,6 +923,8 @@ More information on usage: [add student command](UserGuide.html#adding-a-student
        Expected: Similar to previous.<br>
        But note that the student list is reset to show all students after adding a student successfully.
 
+<div style="page-break-after: always"></div>
+
 ### Adding a remark to a student
 Command: `remark`
 
@@ -912,6 +955,8 @@ More information on usage: [remark student command](UserGuide.html#adding-a-rema
 
    2. Test case: Similar to previous.<br>
       Expected: Similar to previous.
+
+<div style="page-break-after: always"></div>
 
 ### Sorting the student list
 Command: `sort`
@@ -955,6 +1000,8 @@ More information on usage: [sort students command](UserGuide.html#sorting-all-st
       Expected: Similar to previous.<br>
       Note that sorting and filtering can be stacked. Sorting is done on top of the currently filtered list.
 
+<div style="page-break-after: always"></div>
+
 ### Finding students by different criterias
 Command: `find`
 
@@ -988,6 +1035,8 @@ More information on usage: [find Finding a student](#finding-a-student--find)
 
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Appendix: Effort**
 
 ### Difficulty Level
@@ -1029,6 +1078,8 @@ for a command (i.e. `add` will now perform `addStudent` or `addCourse` depending
     
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always"></div>
+
 ## **Appendix: Planned Enhancements**
 
 ### Select from Course Page
