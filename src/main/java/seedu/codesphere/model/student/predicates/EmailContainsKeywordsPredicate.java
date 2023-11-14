@@ -9,7 +9,7 @@ import seedu.codesphere.commons.util.ToStringBuilder;
 import seedu.codesphere.model.student.Student;
 
 /**
- * Tests that a {@code Person}'s {@code Name} matches any of the keywords given.
+ * Tests that a {@code Student}'s {@code Name} matches any of the keywords given.
  */
 public class EmailContainsKeywordsPredicate implements Predicate<Student> {
     private final List<String> keywords;

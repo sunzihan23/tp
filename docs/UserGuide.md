@@ -158,9 +158,9 @@ In the course page, the course list is now being displayed in the left column, w
 
 The student list for `CS2101` is currently empty, so let's add a few students into the list with the following commands:
 *(Remember to press 'Enter' after each command)*
-`add n/John Tan e/e0123456@u.nus.edu t/good`
-`add n/Mary Lim e/e1234567@u.nus.edu t/average`
-`add n/David Lee e/e2345678@u.nus.edu t/poor`
+- `add n/John Tan e/e0123456@u.nus.edu t/good`
+- `add n/Mary Lim e/e1234567@u.nus.edu t/average`
+- `add n/David Lee e/e2345678@u.nus.edu t/poor`
 
 >:information_source: Note: When creating students, you must always include their name (`n/`), email (`e/`) and performance tag (`t/`).
 
@@ -244,6 +244,7 @@ Exits the program.
 
 ### **Home Page Commands**
 The home page in CodeSphere displays the list of courses that you are currently overseeing and have stored in the application.
+Courses are arranged in order of addition, with the first course added at the top of the course list.
 
 *![Home Page](images/HomePage.png)*
 
@@ -263,11 +264,11 @@ There is also a `select` command that brings you to the course page of the selec
 
 ### Adding a course : `add`
 
-Adds a course you teach to the list of courses.
+Adds a course into the list of courses.
 
 **Format:** `add c/COURSE_NAME`
 * `COURSE_NAME`: A valid course in NUS. Each course name should consist of a two or three letter prefix, four digits, and an optional one letter suffix.
-* Note that the letters in the `COURSE_NAME` are case-insensitive, and they will all be stored and displayed as uppercase letters.
+* Note that the alphabets in the input for `COURSE_NAME` are case-insensitive, and they will all be stored and displayed as uppercase letters. For example, entering `add c/cs1101s` or `add c/CS1101S` will both result in `CS1101S` being added to the course list.
 
 **Examples:**
 * `add c/CS2103T`
@@ -275,6 +276,8 @@ Adds a course you teach to the list of courses.
 * `add c/GEA1000`
 * `add c/st2334` returns the following result:
   *![Add_Course](images/CommandSuccessScreenshots/AddCourseSuccess.png)*
+
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always"></div>
 
@@ -286,12 +289,14 @@ Edits the details of an existing course from the list of courses.
 * `INDEX`: Refers to the index number shown in the displayed course list. It must be a positive integer (1, 2, 3, ...), and it should fall within the range of courses currently displayed such that it corresponds to a valid course.
 * `NEW_COURSE_NAME`: A valid course in NUS. Each course name should consist of a two or three letter prefix, four digits, and an optional one letter suffix.
 * The existing `COURSE_NAME` for the course at the specified `INDEX` will be updated to the input `NEW_COURSE_NAME`.
-* Note that the letters in the `NEW_COURSE_NAME` are case-insensitive, and they will all be stored and displayed as uppercase letters.
+* Note that the alphabets in the input for `NEW_COURSE_NAME` are case-insensitive, and they will all be stored and displayed as uppercase letters. For example, entering `edit 1 c/cs1101s` or `edit 1 c/CS1101S` will both result in the course at index 1 being updated to `CS1101S`.
 
 **Examples:**
 * `edit 1 c/cs1231` edits the `COURSE_NAME` of the first course in the course list to become `CS1231`.
 * `edit 1 c/CS1101` return the following result:
   *![Edit_Course](images/CommandSuccessScreenshots/EditCourseSuccess.png)*
+
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always"></div>
 
@@ -308,6 +313,12 @@ Deletes the specified course from the list of courses.
 * `delete 2` returns the following result:
   *![Delete_Course](images/CommandSuccessScreenshots/DeleteCourseSuccess.png)*
 
+<div markdown="span" class="alert alert-warning">:exclamation: <b>Caution:</b>
+Deleting a course will also delete all the students in that course. Ensure that you really wish to delete a course and all the students in that course before using the `delete` course command because this action cannot be undone.
+</div>
+
+[_Back to Top_](#table-of-contents)
+
 <div style="page-break-after: always"></div>
 
 ### Clearing all courses : `clear`
@@ -317,6 +328,12 @@ Clears all courses in the displayed list of courses.
 Format: `clear`
 * `clear` returns the following result:
 *![Clear_Course](images/CommandSuccessScreenshots/ClearCourseSuccess.png)*
+
+<div markdown="span" class="alert alert-warning">:exclamation: <b>Caution:</b>
+Clearing all courses will also clear all the students in each course. Ensure that you really wish to clear all data from CodeSphere before using the `clear` course command because this action cannot be undone.
+</div>
+
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always"></div>
 
@@ -333,6 +350,8 @@ Selects the specified course from the list of courses.
 * `select 1` returns the following result:
 *![Select](images/CommandSuccessScreenshots/SelectSuccess.png)*
 
+[_Back to Top_](#table-of-contents)
+
 <div style="page-break-after: always"></div>
 
 ### Finding a course : `find`
@@ -344,18 +363,20 @@ Finds courses from the list of courses that match a given a keyword.
 * If there are multiple words specified for `KEYWORD`, each word is searched for independently. The final result contains courses that contain any of the words specified for `KEYWORD`.
 
 **Example:**
-* `find S` Displays all courses with `S` in their course name.
-* `find CS GEA` Displays all courses with `CS` or `GEA` in their course name.
+* `find S` displays all courses with `S` in their course name.
+* `find CS GEA` displays all courses with `CS` or `GEA` in their course name.
 * `find st CS1101` returns the following result:
 *![Find_Course](images/CommandSuccessScreenshots/FindCourseSuccess.png)*
+
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always"></div>
 
 ### Resetting the course list : `reset`
-Resets a filtered course list to its original order, where courses are arranged chronologically based on when they were added, with the first course added at the top of the displayed list.
+Resets a filtered course list to its original order, where courses are arranged chronologically based on their order of addition, with the first course added at the top of the displayed list.
 
 **Format:** `reset`
-
+* Recall that `find` will show a filtered course list. `reset` helps to restore the filtered course list back to its original order.
 * `reset` returns the following result:
 *![Reset](images/CommandSuccessScreenshots/ResetSuccess.png)*
 
@@ -366,7 +387,7 @@ Resets a filtered course list to its original order, where courses are arranged 
 
 ### **Course Page Commands**
 Once you have created and selected a course to manage, you can now start adding your students in the course that you wish to track.
-The course page of a course displays the list of students that you are overseeing in your course (added by you).
+For each course, the course page displays a list of students that you have added into that particular course.
 Students are arranged in order of addition, with the first student added at the top of the list.
 
 **![Course Page](images/course_display.png)**
@@ -389,12 +410,12 @@ Commands exclusive to the course page can help you:
 <div style="page-break-after: always"></div>
 
 ### Adding a student : `add`
-Adds a student to the list of students in the selected course that the user is overseeing.
+Adds a student to the list of students in the selected course.
 
-**Format:** `add n/NAME e/EMAIL t/ENUM_TAG`
-* `NAME`: Student names are case-sensitive and should only contain alphabets and some specified special characters (, / - ‘).
-* `EMAIL`: NUS undergraduate student’s email, in the format of exxxxxxx@u.nus.edu. Alphabets in the email are case-insensitive.
-* `ENUM_TAG`: A pre-defined enumerated tag. Valid tags: good, average, poor. Inputs for tags are case-insensitive.
+**Format:** `add n/NAME e/EMAIL t/TAG`
+* `NAME`: Student names can only contain alphabets and some special characters (, / - ‘). Note that alphabets in the input for `NAME` are case-sensitive.
+* `EMAIL`: NUS undergraduate student’s email, in the format of "exxxxxxx@u.nus.edu". Note that the alphabets in the input for`EMAIL` are case-insensitive, and they will all be stored and displayed as uppercase letters. For example, using `e/e1234567@u.nus.edu` or `e/E1234567@U.NUS.EDU` will both result in `e1234567@u.nus.edu` being added as a student's `EMAIL`.
+* `TAG`: Represents a student's performance level in the selected course. Valid performance tags include `GOOD`, `AVERAGE` and `POOR`. Note that the input for `TAG` is case-insensitive, and they will all be stored and displayed as uppercase letters. For example, using `t/good` or `t/GOOD` will both result in `GOOD` being added as a student's `TAG`.
 
 **Examples:**
 * `add n/Susan Tan e/e0946283@u.nus.edu t/GOOD`
@@ -402,55 +423,48 @@ Adds a student to the list of students in the selected course that the user is o
 * `add n/Ashley-Jane Lim e/E9739153@U.NUS.EDU t/poor` returns the following result:
 *![Add_Student](images/CommandSuccessScreenshots/AddStudentSuccess.png)*
 
+[_Back to Top_](#table-of-contents)
 
-**Command succeeds:** Success message shown, student successfully added and stored in database, change in GUI.
-
-**Command failure:** Incorrect format results in an error message shown and the student is not added/stored in the database.
-
+<div style="page-break-after: always"></div>
 
 ### Editing a student : `edit`
 
-Edits an existing student that the user is currently overseeing.
+Edits the details of an existing student from the list of students in the selected course.
 
-**Format:** `edit INDEX [n/NAME] [e/EMAIL] [t/ENUM_TAG] [r/REMARK] [pq/PENDING_QUESTION]`
-* Edits the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed students list.
-* `INDEX`: Must be a **positive integer** (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
-* Optional fields are indicated by square brackets [ ], but **at least one** of the optional fields must be provided.
-* Field inputs **should not contain other prefixes**, e.g. `edit 1 r/new remark e/o` is not allowed as the prefix `e/` is contained in the input.
-* Existing values will be updated to the input values.
-* When editing tags/remarks/pending questions, the respective existing fields of the person will be removed i.e. adding of tags/remarks/pending questions is not cumulative.
+**Format:** `edit INDEX [n/NAME] [e/EMAIL] [t/TAG] [r/REMARK] [pq/PENDING_QUESTION]`
+* `INDEX`: Refers to the index number shown in the displayed student list. It must be a positive integer (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
+* All fields after `INDEX` are optional, as indicated by square brackets [ ]. But **at least one** of the optional fields must be provided.
+* Field(s) specified in the command will replace existing field(s) for the student at the specified `INDEX`.
+* The inputs for each field should not contain other valid prefixes. For example, `edit 1 r/new remark e/o`, where the `REMARK` field is intended to be `new remark e/o`, is not allowed because the valid prefix `e/` for `EMAIL` is included in the input for the `REMARK` field.
+* Note that when editing tags/remarks/pending questions, the respective existing fields of the student will be removed, meaning that adding of tags/remarks/pending questions is not cumulative.
 
 **Examples:**
-* `edit 1 t/good` Edits the tag of the first student in the displayed student list to be GOOD.
-* `edit 2 n/Alex Yeoh t/average` Edits the name of the second student to be Alex Yeoh and changes the tag to AVERAGE.
-* `edit 3 r/participative` Edits the remark of the third student to be "participative".
+* `edit 1 t/good` edits the tag of the first student in the displayed student list to be GOOD.
+* `edit 2 n/Alex Yeoh t/average` edits the name of the second student to be Alex Yeoh and changes the tag to AVERAGE.
+* `edit 3 r/participative` edits the remark of the third student to be "participative".
 * `edit 4 pq/what is a logic gate? n/David Lee` returns the following result:
 *![Edit_Student](images/CommandSuccessScreenshots/EditStudentSuccess.png)*
 
-**Command succeeds:** Success message shown, student successfully edited and updated in database, change in GUI.
+[_Back to Top_](#table-of-contents)
 
-**Command failure:** Incorrect format results in an error message shown and the student is not updated in the database.
-
+<div style="page-break-after: always"></div>
 
 ### Deleting a student : `delete`
 
-Deletes the specified student from the list of students you are overseeing in the selected course.
+Deletes the specified student from the list of students in the selected course.
 
 **Format:** `delete INDEX`
-* Deletes the student at the specified `INDEX`.
-* The index refers to the index number shown in the displayed students list.
-* `INDEX`: Must be a **positive integer** (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
+* `INDEX`: Refers to the index number shown in the displayed student list. It must be a positive integer (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
+* The student at the specified `INDEX` will be deleted from the student list of the selected course.
 
 **Example:**
-* `delete 2` Deletes the student at index 2 of the displayed students list.
+* `delete 2` deletes the student at index 2 of the displayed students list.
 * `delete 1` returns the following result:
 *![Delete_Student](images/CommandSuccessScreenshots/DeleteStudentSuccess.png)*
 
-**Command succeeds:** Success message shown, student successfully removed from database, change in GUI.
+[_Back to Top_](#table-of-contents)
 
-**Command failure:** Incorrect format results in an error message shown and the student is not removed from the database.
-
+<div style="page-break-after: always"></div>
 
 ### Clearing all students : `clear`
 
@@ -460,15 +474,23 @@ Clears all students in the displayed list of students in the selected course.
 * `clear` returns the following result:
 *![Clear_Student](images/CommandSuccessScreenshots/ClearStudentListSuccess.png)*
 
+<div markdown="span" class="alert alert-warning">:exclamation: <b>Caution:</b>
+Ensure that you really wish to clear all students from the selected course before executing the `clear` student command because this action cannot be undone.
+</div>
+
+[_Back to Top_](#table-of-contents)
+
 <div style="page-break-after: always;"></div>
 
 ### Resetting the student list : `reset`
 
-Shows a list of all students in the original state after filtering or sorting.
+Resets a filtered or sorted student list to its original order, where students are arranged chronologically based on their order of addition, with the first student added at the top of the displayed list.
 
 **Format:**`reset`
 * `reset` returns the following result:
 *![Reset_Student](images/CommandSuccessScreenshots/ResetStudentSuccess.png)*
+
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always;"></div>
 
@@ -477,26 +499,24 @@ Shows a list of all students in the original state after filtering or sorting.
 Sorts the list of students you are overseeing in the selected course **by name or by tag**.
 
 **Format**: `sort s/SORT_CRITERIA`
-* Sorts the displayed student based on the specified `SORT_CRITERIA`.
-* `SORT_CRITERIA`: A pre-defined enumerated criteria.
-* Valid sort criteria: tag, name.
+* `SORT_CRITERIA`: Represents the criteria that the user wishes to sort the student list by. Valid `SORT_CRITERIA` include `NAME` and `TAG`. Note that the input for `SORT_CRITERIA` is case-insensitive.
+* The student list for the selected course will be sorted according to the specified `SORT_CRITERIA`.
+* `SORT_CRITERIA` of `NAME` sorts the students list by name and displays students whose names start with 'A' at the top of the list.
+* `SORT_CRITERIA` of `TAG` sorts the students list by performance tags and displays students with `GOOD` tags top of the list.
 
 **Examples:**
-* `sort s/tag` Sorts the student list by tag. Students with the GOOD tag are displayed at the top of the list.
-* `sort s/name` Sorts the student list by name in alphabetical order.
+* `sort s/tag` sorts the student list by tag.
+* `sort s/NAME` sorts the student list by name.
 * `sort s/tag` returns the following result:
 *![Sort_Student](images/CommandSuccessScreenshots/SortSuccess.png)*
 
-
-**Command succeeds:** Success message shown, sorted student list is updated in the database, change in GUI.
-
-**Command failure:** Incorrect format results in an error message shown and the student list is not sorted.
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always;"></div>
 
 ### Finding a student : `find`
 
-Find a student **by a certain field** from the list of students you are overseeing in the selected course.
+Finds students from the list of students in the selected course that match the given keyword(s) for a specified field.
 
 **Format:** `find [n/NAME] [e/EMAIL] [t/TAG] [pq/QUESTION] [r/REMARK]`
 * The search is case-insensitive. For example, hans will match Hans.
@@ -511,82 +531,69 @@ Find a student **by a certain field** from the list of students you are overseei
 * `find pq/logic` returns the following result:
 *![Find_Student](images/CommandSuccessScreenshots/FindStudentSuccess.png)*
 
+[_Back to Top_](#table-of-contents)
 
-**Command succeeds:** Success message shown to user, no change in the database, a change in GUI is displayed.
-
-**Command failure:** Users enter the command with incorrect formatting, resulting in an error message shown to the user.
-
+<div style="page-break-after: always"></div>
 
 ### List all pending questions : `list`
 
-List all the students with non-empty pending question fields.
+Lists all students in the selected course with non-empty pending question fields.
 
 **Format:** `list pq/`
+* `list` command only can only be used for listing of pending questions.
 * Nothing should be specified after `pq/`.
 * `list pq/` returns the following result:
 *![List_PQ](images/CommandSuccessScreenshots/ListPQSuccess.png)*
 
-
-**Command succeeds:** Success message shown to user, no change in the database, a change in GUI is displayed.
-
-**Command failure:** Users enter the command with incorrect formatting, resulting in an error message shown to the user.
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always;"></div>
 
 ### Adding a remark for a student : `remark`
 
-Adds a remark to the specified student from the list of students.
+Adds a remark to the specified student from the list of students in the selected course.
 
 **Format:** `remark INDEX r/REMARK`
-* Adds a remark for the student at the specified `INDEX`.
-* The index refers to the index number shown in the displayed students list.
-* `INDEX`: Must be a **positive integer** (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
-* The input remark must not be empty.
-* Inputting another remark will overwrite the current remark, i.e. adding of remark is not cumulative.
+* `INDEX`: Refers to the index number shown in the displayed student list. It must be a positive integer (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
+* The inputs for `REMARK` will be added to the `REMARK` field for the student at the specified `INDEX`.
+* Note that the inputs for `REMARK` cannot be empty.
+* Note that the adding of a `REMARK` is not cumulative. If the current `REMARK` field is not empty, using the `remark` command again will overwrite what is in the current `REMARK` field.
 
 **Example:**
-* `remark 2 r/needs more help` Adds a remark to the student at index 2 of the displayed students list saying needs more help.
+* `remark 2 r/needs more help` adds a remark to the student at index 2 of the displayed students list saying needs more help.
 * `remark 1 r/late submission` returns the following result:
 *![Add_Remark](images/CommandSuccessScreenshots/RemarkSuccess.png)*
 
-
-**Command succeeds:** Success message shown, remark successfully added to student and updated in database, change in GUI.
-
-**Command failure:** Incorrect format results in an error message shown and the remark is not added to the student.
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always;"></div>
 
 ### Adding a pending question for a student : `pq`
 
-Adds a pending question to a specified student from the list of students of a course.
+Adds a pending question to the specified student from the list of students in the selected course.
 
 **Format:** `pq INDEX pq/PENDING_QUESTION`
-* Adds a pending question for the student at the specified `INDEX`.
-* The index refers to the index number shown in the displayed students list.
-* `INDEX`: Must be a **positive integer** (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
-* The input pending question must not be empty.
-* Only one pending question is allowed at a time, i.e. adding of pending question is not cumulative.
+* `INDEX`: Refers to the index number shown in the displayed student list. It must be a positive integer (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
+* The inputs for `PENDING_QUESTION` will be added to the `PENDING_QUESTION` field for the student at the specified `INDEX`.
+* Note that the inputs for `PENDING_QUESTION` cannot be empty.
+* Note that the adding of a `PENDING_QUESTION` is not cumulative. If the current `PENDING_QUESTION` field is not empty, using the `pq` command again will overwrite what is in the current `PENDING_QUESTION` field.
 
 **Example:**
-* `pq 2 pq/What is a logic gate?` Adds a pending question to the student at index 2 of the displayed student, with the question “What is a logic gate?”. This indicates a need to follow-up with the student.
+* `pq 2 pq/What is a logic gate?` adds a pending question to the student at index 2 of the displayed student, with the question “What is a logic gate?”. This indicates a need to follow-up with the student.
 * `pq 1 pq/Tut 10 Qns 8` returns the following result:
 *![Add_PQ](images/CommandSuccessScreenshots/PQSuccess.png)*
 
-
-**Command succeeds:** Success message shown, pending question successfully added and updated in database, change in GUI.
-
-**Command failure:** Incorrect format results in an error message shown and pending question is not added to the student.
+[_Back to Top_](#table-of-contents)
 
 ### Removing a remark/pending question of a student : `remove`
 
-Removes a remark or pending question of a specified student from the list of students.
+Removes a remark or pending question from the specified student in the selected course.
 
 **Format:** `remove INDEX [r/] [pq/]`
-* Removes a pending question of the student at the specified `INDEX`.
-* The index refers to the index number shown in the displayed students list.
-* `INDEX`: Must be a **positive integer** (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
-* At least one of the optional fields must be provided.
-* Nothing should be specified after `r/` or `pq/`.
+* `INDEX`: Refers to the index number shown in the displayed student list. It must be a positive integer (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
+* The fields after `INDEX` are optional, as indicated by square brackets [ ]. But **at least one** of the optional fields must be provided.
+* `remove` clears the field(s) specified for the student at the specified `INDEX`.
+* Note that nothing should be specified after `r/` or `pq/`.
 
 **Examples:**
 * `remove 2 pq/` Removes a pending question of the student at index 2 of the displayed students list.
@@ -594,14 +601,12 @@ Removes a remark or pending question of a specified student from the list of stu
 * `remove 1 pq/ r/` returns the following result:
   *![Remove](images/CommandSuccessScreenshots/RemoveSuccess.png)*
 
-**Command succeeds:** Success message shown, remark/pending question successfully removed from student, change in GUI.
-
-**Command failure:** Incorrect format results in an error message shown and the remark/pending question is not removed from the student.
+[_Back to Top_](#table-of-contents)
 
 <div style="page-break-after: always;"></div>
 
 ### Returning to the home page : `home`
-Returns to the [home page](#home-page-commands) showing the list of courses you are overseeing.
+Returns to the [home page](#home-page-commands) that shows the list of courses.
 
 **Format:** `home`
 * `home` returns the following result:
@@ -615,7 +620,7 @@ Returns to the [home page](#home-page-commands) showing the list of courses you 
 
 ### Saving the data
 
-CodeSphere data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+CodeSphere data is saved in the hard disk automatically after any command that changes the data is made. There is no need to save manually.
 
 ### Editing the data file
 
@@ -637,7 +642,6 @@ If your changes to the data file makes it invalid, CodeSphere will overwrite all
 
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CodeSphere home folder.
 
---------------------------------------------------------------------------------------------------------------------
 ## **Known Issues**
 
 1. When using multiple screens, if you move the application to a secondary screen, and later switch to using only the primary screen,
@@ -657,10 +661,10 @@ If your changes to the data file makes it invalid, CodeSphere will overwrite all
 | **Help**              | `help`                                                     |
 | **Add Course**        | `add c/COURSENAME`<br/> e.g. `add c/CS1101S`               |
 | **Edit Course**       | `edit INDEX c/NEW_COURSENAME`<br/> e.g. `edit 1 c/CS1231S` |
-| **Delete Course**     | `delete INDEX` e.g. `delete 1`                             |
+| **Delete Course**     | `delete INDEX` <br/> e.g. `delete 1`                       |
 | **Clear All Courses** | `clear`                                                    |
-| **Select Course**     | `select INDEX` e.g. `select 1`                             |
-| **Find Course**       | `find KEYWORD` e.g. `find CS`                              |
+| **Select Course**     | `select INDEX` <br/> e.g. `select 1`                       |
+| **Find Course**       | `find KEYWORD` <br/> e.g. `find CS`                        |
 | **Reset Course List** | `reset`                                                    |
 | **Exit**              | `exit`                                                     |
 
@@ -675,15 +679,15 @@ If your changes to the data file makes it invalid, CodeSphere will overwrite all
 | **Help**                                 | `help`                                                                                 |
 | **Add Student**                          | `add n/NAME e/EMAIL t/ENUM_TAG`<br/>e.g. `add n/Susan Tan e/e0123456@u.nus.edu t/GOOD` |
 | **Edit Student**                         | `edit INDEX [n/NAME] [e/EMAIL] [t/ENUM_TAG]`<br/> e.g. `edit 1 n/JOHN`                 |
-| **Delete Student**                       | `delete INDEX` e.g. `delete 1`                                                         |
+| **Delete Student**                       | `delete INDEX` <br/> e.g. `delete 1`                                                   |
 | **Clear All Students**                   | `clear`                                                                                |
 | **Reset Student List**                   | `reset`                                                                                |
-| **Sort Students**                        | `sort s/SORT_CRITERIA` e.g. `sort s/name`                                              |                                                                                        |
-| **Find Students**                        | `find [n/NAME] [e/EMAIL] [t/TAG] [pg/QUESTION] [r/REMARK]` e.g. `find n/John`          |
+| **Sort Students**                        | `sort s/SORT_CRITERIA` <br/> e.g. `sort s/name`                                        |                                                                                        |
+| **Find Students**                        | `find [n/NAME] [e/EMAIL] [t/TAG] [pg/QUESTION] [r/REMARK]` <br/> e.g. `find n/John`    |
 | **List Students with Pending Questions** | `list pq/`                                                                             |
 | **Add Remark**                           | `remark INDEX r/REMARK`<br/>e.g. `remark 1 r/needs more help`                          |
 | **Add Pending Question**                 | `pq INDEX r/PENDINGQUESTION`<br/>e.g. `pq 1 pq/What is a logic gate?`                  |
-| **Remove Remark/<br>Pending Question**   | `remove INDEX [r/] [pq/]` e.g. `remove 2 r/`                                           |
+| **Remove Remark/<br>Pending Question**   | `remove INDEX [r/] [pq/]` <br/> e.g. `remove 2 r/`                                     |
 | **Home**                                 | `home`                                                                                 |
 | **Exit**                                 | `exit`                                                                                 |
 

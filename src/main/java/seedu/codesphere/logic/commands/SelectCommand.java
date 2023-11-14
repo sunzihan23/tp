@@ -9,6 +9,7 @@ import seedu.codesphere.logic.stagemanager.Stages;
 import seedu.codesphere.model.Model;
 import seedu.codesphere.model.course.Course;
 
+//Solution below adapted from https://github.com/AY2223S1-CS2103T-W11-4/tp
 /**
  * Moves to viewing of the selected course.
  */

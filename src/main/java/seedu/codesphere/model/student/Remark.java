@@ -3,7 +3,7 @@ package seedu.codesphere.model.student;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Represents a Person's remark in the address book.
+ * Represents a Student's remark in the address book.
  * Guarantees: immutable; is always valid
  */
 public class Remark {

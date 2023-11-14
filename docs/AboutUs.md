@@ -57,5 +57,5 @@ You can reach us at the email `devanshu[at]comp.nus.edu.sg`
 [[github](http://github.com/gongg21)]
 [[portfolio](team/gongg21.md)]
 
-* Role: Developer
-* Responsibilities: In charge of command logic and integration of code.
+* Role: Developing and Testing
+* Responsibilities: In charge of command logic, integration of code, and overall testing of app.

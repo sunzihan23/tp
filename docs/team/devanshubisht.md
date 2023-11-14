@@ -14,16 +14,16 @@ Given below are my contributions to the project.
 * **New Feature**: Find Command.
   * What it does: Locate students in a course using various criteria. The search is case-insensitive and order-agnostic.
   * Justification: This feature aids teaching assistants in quickly locating students based on partial information. Enables efficient searches for any attribute, enhancing overall workflow.
-  * Highlights: Development included distinct predicates for student attributes, integration with the Course class for proper list updates, and StringUtil class enhancements for tailored logic.
+  * Highlights: Development included distinct predicates for student attributes, integration with the `Course` class for proper list updates, and `StringUtil` class enhancements for tailored logic.
 
 * **New Feature**: StageManager & Stages.
-  * What it does: Determines the user's stage to parse commands accurately and guides UiManager in displaying relevant components.
+  * What it does: Determines the user's stage to parse commands accurately and guides `UiManager` in displaying relevant components.
   * Justification: This feature eliminates the need for lengthy, section-specific commands. For example, our application can detect if the `add` command should add a student or course. The logic also prevents bugs from happening as we restrict the usage of some commands based on which stage they are at.
-  * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to classes such as LogicManager and CodeSphereParser.
+  * Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to classes such as `LogicManager` and `CodeSphereParser`.
 
 * **New Feature**: Home.
   * What it does: Allows users to visit back home when they are viewing a student list of a selected course.
-  * Justification: A user-friendly command to allow users to navigate back to the home page which contains all the courses.
+  * Justification: A user-friendly command to allow users to navigate back to the `home` page which contains all the courses.
   * Highlights: This command needed to be implemented appropriately such that our application Stage would be implemented correctly.
 
 * **New Feature**: Add Course.
