@@ -27,7 +27,7 @@ Given below are my contributions to the project.
   * Added summary statistics for each course in the course list to show the total number of students in that course, the number of students with non-empty pending question fields, and the number of students who are tagged as GOOD, AVERAGE and POOR. (PR [\#94](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/94), [\#135](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/135)).
   * Added new tests and modified existing tests (PR [\#241](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/241), [\#253](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/253), [\#256](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/256), [\#260](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/260), [\#261](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/261), [\#262](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/262)).
 <br>
-* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=sunzihan23&breakdown=true)
+* **Code contributed**: [RepoSense link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=sunzihan23&breakdown=false&sort=groupTitle%20dsc&sortWithin=title&since=2023-09-22&timeframe=commit&mergegroup=&groupSelect=groupByRepos&tabOpen=true&tabType=authorship&tabAuthor=sunzihan23&tabRepo=AY2324S1-CS2103T-W15-4%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code~other&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)
 <br>
 * **Team-tasks**:
   * Set up the GitHub team organisation and repository.
