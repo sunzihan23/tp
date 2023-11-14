@@ -158,9 +158,9 @@ In the course page, the course list is now being displayed in the left column, w
 
 The student list for `CS2101` is currently empty, so let's add a few students into the list with the following commands:
 *(Remember to press 'Enter' after each command)*
-`add n/John Tan e/e0123456@u.nus.edu t/good`
-`add n/Mary Lim e/e1234567@u.nus.edu t/average`
-`add n/David Lee e/e2345678@u.nus.edu t/poor`
+- `add n/John Tan e/e0123456@u.nus.edu t/good`
+- `add n/Mary Lim e/e1234567@u.nus.edu t/average`
+- `add n/David Lee e/e2345678@u.nus.edu t/poor`
 
 >:information_source: Note: When creating students, you must always include their name (`n/`), email (`e/`) and performance tag (`t/`).
 
