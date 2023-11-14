@@ -69,7 +69,7 @@ public class Student {
 
     /**
      * Returns true if both students have the same identity and data fields.
-     * This defines a stronger notion of equality between two persons.
+     * This defines a stronger notion of equality between two students.
      */
     @Override
     public boolean equals(Object other) {

@@ -9,7 +9,7 @@ import seedu.codesphere.model.tag.StudentRank;
 import seedu.codesphere.model.tag.Tag;
 
 /**
- * A utility class to help with building Person objects.
+ * A utility class to help with building Student objects.
  */
 public class StudentBuilder {
 
@@ -26,7 +26,7 @@ public class StudentBuilder {
     private PendingQuestion pendingQuestion;
 
     /**
-     * Creates a {@code PersonBuilder} with the default details.
+     * Creates a {@code StudentBuilder} with the default details.
      */
     public StudentBuilder() {
         name = new Name(DEFAULT_NAME);
@@ -37,18 +37,18 @@ public class StudentBuilder {
     }
 
     /**
-     * Initializes the PersonBuilder with the data of {@code personToCopy}.
+     * Initializes the StudentBuilder with the data of {@code studentToCopy}.
      */
-    public StudentBuilder(Student personToCopy) {
-        name = personToCopy.getName();
-        email = personToCopy.getEmail();
-        remark = personToCopy.getRemark();
-        pendingQuestion = personToCopy.getPendingQuestion();
-        tag = personToCopy.getTag();
+    public StudentBuilder(Student studentToCopy) {
+        name = studentToCopy.getName();
+        email = studentToCopy.getEmail();
+        remark = studentToCopy.getRemark();
+        pendingQuestion = studentToCopy.getPendingQuestion();
+        tag = studentToCopy.getTag();
     }
 
     /**
-     * Sets the {@code Name} of the {@code Person} that we are building.
+     * Sets the {@code Name} of the {@code Student} that we are building.
      */
     public StudentBuilder withName(String name) {
         this.name = new Name(name);
@@ -56,7 +56,7 @@ public class StudentBuilder {
     }
 
     /**
-     * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Person} that we are building.
+     * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Student} that we are building.
      */
     public StudentBuilder withTag(StudentRank studentRank) {
         this.tag = new Tag(studentRank);
@@ -64,7 +64,7 @@ public class StudentBuilder {
     }
 
     /**
-     * Sets the {@code Email} of the {@code Person} that we are building.
+     * Sets the {@code Email} of the {@code Student} that we are building.
      */
     public StudentBuilder withEmail(String email) {
         this.email = new Email(email);
@@ -72,7 +72,7 @@ public class StudentBuilder {
     }
 
     /**
-     * Sets the {@code Remark} of the {@code Person} that we are building.
+     * Sets the {@code Remark} of the {@code Student} that we are building.
      */
     public StudentBuilder withRemark(String remark) {
         this.remark = new Remark(remark);

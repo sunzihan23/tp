@@ -5,10 +5,10 @@ import static java.util.Objects.requireNonNull;
 import static seedu.codesphere.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
 import seedu.codesphere.commons.core.index.Index;
-import seedu.codesphere.commons.exceptions.IllegalValueException;
 import seedu.codesphere.logic.commands.SelectCommand;
 import seedu.codesphere.logic.parser.exceptions.ParseException;
 
+//Solution below adapted from https://github.com/AY2223S1-CS2103T-W11-4/tp
 /**
  * Parses input arguments and creates a new SelectCommand object
  */
@@ -25,8 +25,8 @@ public class SelectCommandParser implements Parser<SelectCommand> {
         try {
             Index index = ParserUtil.parseIndex(argMultimap.getPreamble());
             return new SelectCommand(index);
-        } catch (IllegalValueException ive) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, SelectCommand.MESSAGE_USAGE), ive);
+        } catch (ParseException pe) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, SelectCommand.MESSAGE_USAGE), pe);
         }
     }
 }

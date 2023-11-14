@@ -7,19 +7,20 @@ import static seedu.codesphere.testutil.TypicalIndexes.INDEX_FIRST_STUDENT;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.codesphere.logic.commands.DeleteCommand;
+import seedu.codesphere.logic.commands.DeleteCourseCommand;
 
-public class DeleteCommandParserTest {
+public class DeleteCourseCommandParserTest {
 
-    private DeleteCommandParser parser = new DeleteCommandParser();
+    private DeleteCourseCommandParser parser = new DeleteCourseCommandParser();
 
     @Test
-    public void parse_validIndex_returnsDeleteCommand() {
-        assertParseSuccess(parser, "1", new DeleteCommand(INDEX_FIRST_STUDENT));
+    public void parse_validIndex_returnsDeleteCourseCommand() {
+        assertParseSuccess(parser, "1", new DeleteCourseCommand(INDEX_FIRST_STUDENT));
     }
 
     @Test
     public void parse_invalidIndex_throwsParseException() {
-        assertParseFailure(parser, "a", String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
+        assertParseFailure(parser, "a", String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                DeleteCourseCommand.MESSAGE_USAGE));
     }
 }

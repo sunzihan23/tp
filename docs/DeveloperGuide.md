@@ -432,8 +432,8 @@ If the conditions are not met a `ParseException` is thrown.
 
 #### Command execution
 1. The `LogicManager` executes the `FindCommand`.
-2. The `FindCommand` calls the `Model#updateFilteredPersonList()` to update the filtered person list based on predicate class.
-3. The `FindCommand` then calls the `Model#getFilteredPersonList()#size()` to get the size of the person list. The size will correspond to the number of persons listed.
+2. The `FindCommand` calls the `Model#updateFilteredStudentList()` to update the filtered student list based on predicate class.
+3. The `FindCommand` then calls the `Model#getFilteredStudentList()#size()` to get the size of the student list. The size will correspond to the number of students listed.
 
 #### Displaying of result
 1. The `FindCommand` will create a `CommandResult` with a success message and return it to the `LogicManager` to complete the command execution. The GUI will also be updated accordingly as it calls the `filteredStudentList` which was updated during the execution of the command.

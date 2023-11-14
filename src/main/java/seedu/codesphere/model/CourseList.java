@@ -12,7 +12,7 @@ import seedu.codesphere.model.course.UniqueCourseList;
 
 /**
  * Wraps all data at the address-book level
- * Duplicates are not allowed (by .isSamePerson comparison)
+ * Duplicates are not allowed (by .isSameCourse comparison)
  */
 public class CourseList implements ReadOnlyCourseList {
 
@@ -32,7 +32,7 @@ public class CourseList implements ReadOnlyCourseList {
     public CourseList() {}
 
     /**
-     * Creates an AddressBook using the Persons in the {@code toBeCopied}
+     * Creates an AddressBook using the Courses in the {@code toBeCopied}
      */
     public CourseList(ReadOnlyCourseList toBeCopied) {
         this();
@@ -43,7 +43,7 @@ public class CourseList implements ReadOnlyCourseList {
 
     /**
      * Replaces the contents of the Course list with {@code Courses}.
-     * {@code Courses} must not contain duplicate persons.
+     * {@code Courses} must not contain duplicate courses.
      */
     public void setCourses(List<Course> courses) {
         this.courses.setCourses(courses);
@@ -69,8 +69,8 @@ public class CourseList implements ReadOnlyCourseList {
     }
 
     /**
-     * Adds a person to the address book.
-     * The person must not already exist in the address book.
+     * Adds a course to the address book.
+     * The course must not already exist in the address book.
      */
     public void addCourse(Course p) {
         courses.add(p);
@@ -79,7 +79,7 @@ public class CourseList implements ReadOnlyCourseList {
     /**
      * Replaces the given Course {@code target} in the list with {@code editedCourse}.
      * {@code target} must exist in the Course list.
-     * The person identity of {@code editedCourse} must not be the same as
+     * The course identity of {@code editedCourse} must not be the same as
      * another existing Course in the Course list.
      */
     public void setCourse(Course target, Course editedCourse) {
