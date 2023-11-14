@@ -108,7 +108,6 @@ Else, if you prefer exploring the application on your own, head to [Features](#f
 
 [_Back to Top_](#table-of-contents)
 
-
 <div style="page-break-after: always"></div>
 
 ## **Tutorial for Beginners**
@@ -132,6 +131,9 @@ Below the Command Line is the *Result Box* (which is the outlined box),
 which will tell you the outcome of any commands that you have entered.
 Lastly, underneath that is the *Display Panel*, which will be updated after each command is entered.
 
+[_Back to Top_](#table-of-contents)
+
+<div style="page-break-after: always"></div>
 
 ### Tutorial: Adding a course
 
@@ -143,6 +145,10 @@ After pressing <kbd>Enter</kbd>, you will see a message informing you that there
 You will notice that an item number is displayed beside the course name (note the **7.** beside *CS2101* in the image), as well as some other information being displayed for each course, like the total number of students and total number of pending questions.
 
 ![CS1101S in Homepage](images/tutorial/AddCS2101.png)
+
+[_Back to Top_](#table-of-contents)
+
+<div style="page-break-after: always"></div>
 
 ### Tutorial: Adding students
 
@@ -166,6 +172,8 @@ The student list for `CS2101` is currently empty, so let's add a few students in
 
 ![Filled CS1101S](images/tutorial/course_students.png)
 
+[_Back to Top_](#table-of-contents)
+
 <div style="page-break-after: always"></div>
 
 ### Tutorial: Adding remarks / pending questions
@@ -186,9 +194,9 @@ And with that, you have now successfully created your first course, added a few 
 you have previously entered.
 
 Now that you know how CodeSphere works, feel free to explore some other features that have been specially curated for you to manage your students with ease, such as
-[listing out all students with pending questions](#list-all-pending-questions-list),
-[sorting the students by different criteria](#sorting-all-students-sort) or even
-[finding students with certain keywords in selected field](#finding-a-student-find).
+[listing out all students with pending questions](#list-all-pending-questions--list),
+[sorting the students by different criteria](#sorting-all-students--sort) or even
+[finding students with certain keywords in selected field](#finding-a-student--find).
 
 [_Back to Top_](#table-of-contents)
 <div style="page-break-after: always"></div>
