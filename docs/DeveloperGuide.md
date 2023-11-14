@@ -478,15 +478,26 @@ CodeSphere allows all the user's previously entered text (referred to as 'input'
 Retrieval of this input history is through the 'UP' and 'DOWN' keys on the keyboard.
 
 #### Handling user input
-When the user inputs text through the `CommandBox`, the program will see if the input returns a successful command
-or throws an exception (which causes the program to display an error such as 'Unknown command').
-These inputs will be stored in `InputHistory` as a text alongside an indicator of whether the text was a valid input or not.
+How the input history handles the user input can be seen from the following activity diagram
 
-`InputHistory` contains a pointer that will keep track of which command in the history is being displayed so that
+![Storing Input History](images/StoreInputHistoryActivityDiagram.png)
+
+When the user inputs text through the `CommandBox`, the program will see if the input returns a successful command
+or throws an exception (which causes the program to display an error such as 'Unknown command'); the user input will then be 
+correspondingly be stored as either a valid or invalid command in `InputHistory`.
+
+#### Internal implementation of Input History
+`InputHistory` stores inputs in a data structure that keeps track of the user input as a string,
+as well storing the information on whether the input was parsed as a valid command.
+
+`InputHistory` also contains a pointer that will keep track of which command in the history is being displayed so that
 it can display the relevant 'previous' and 'next' command when required.
 Entering any input will cause the pointer in `InputHistory` to be reset to display the latest command upon the next retrieval.
 
 #### Handling key presses
+
+![Handling Key Presses](images/RetrieveInputHistoryActivityDiagram.png)
+
 When an 'UP' arrow key is registered: The `InputHistory` will display the command that was entered previously (chronologically).
 If the command history is at its earliest command, the earliest command will continue to be displayed.
 
@@ -496,6 +507,7 @@ If the command history is at its latest command, the `CommandBox` will be set to
 #### Displaying of result
 When an input is displayed, it will be displayed on the `CommandBox` and overwrite any text previously typed into it.
 If the input is recognised as invalid, the text displayed will be coloured red, or otherwise it will be displayed in the default white colour.
+Any other changes to the CommandBox will revert the text to white (i.e. after accessing invalid inputs, making changes to them will not cause the text to remain red). 
 
 #### Design considerations
 **Aspect:** Whether we should store and display all user inputs or just valid commands
