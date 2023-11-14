@@ -29,25 +29,25 @@ Given below are my contributions to the project.
 
 * **Code contributed**: [RepoSense Link](https://nus-cs2103-ay2324s1.github.io/tp-dashboard/?search=gongg21&breakdown=false&sort=groupTitle%20dsc&sortWithin=title&since=2023-09-22&timeframe=commit&mergegroup=&groupSelect=groupByRepos)
 
+* **Enhancements to existing features**:
+    * Updated Storage component for the app ([#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78))
+    * Updated Model component for the app ([#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78))
+    * Updated Logic component for the app ([#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78))
+    * Added and updated test files for several classes and existing features to align with the app's intended functionality ([#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78), [#268](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/268/files#diff-1ec9267e3dde0569a3b06f8201aef7d83b34bcde507697075f92a4758e7e041d))
 
 * **Project management**:
     * Generated and managed issues for the progress of the app for `v1.3`-`v1.4` on GitHub.
 
-* **Enhancements to existing features**:
-    * Updated Storage component for the app (pull request [#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78))
-    * Updated Model component for the app ([#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78))
-    * Updated Logic component for the app ([#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78))
-    * Added and updated test files for several classes and existing features to align with the app's functions ([#37](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/78), [#268](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/268/files#diff-1ec9267e3dde0569a3b06f8201aef7d83b34bcde507697075f92a4758e7e041d))
-
 * **Documentation**:
     * User Guide:
         * Reworked structure of the User Guide ([#123](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/123/files), [#125](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/125/files))
-        * Added documentation for `select`, `sort`, `find`, `clear`, ([#130](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/130/files), [#193](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/193/files), [#194](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/194/files))
+        * Added documentation for all sections except _Tutorials for Beginner_ ([#123](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/123/files), [#130](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/130/files))
+        * Added documentation for `add`, `edit`, `delete`, `select`, `sort`, `find`, and `clear` ([#123](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/123/files), [#130](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/130/files), [#193](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/193/files), [#194](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/194/files))
         * Improved navigability of User Guide ([#132](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/132/files))
     * Developer Guide:
-        * Created UML diagrams for the app ([#110](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/110/files))
-        * Added documentation for all components of the app ([#110](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/110/files))
-        * Added implementation details and diagrams for Add, Edit, and Delete Course commands ([#345](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/345), [#356](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/356))
+        * Created UML diagrams for Architecture, Logic, Model, and Storage for the app ([#110](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/110/files))
+        * Added documentation for all main components except UI for the app ([#110](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/110/files))
+        * Added implementation details and diagrams for `add`, `edit`, and `delete` course commands ([#345](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/345), [#356](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/356))
 
 * **Community**:
     * PRs reviewed (with non-trivial review comments) ([#77](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/77), [#97](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/113), [#112](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/112), [#113](https://github.com/AY2324S1-CS2103T-W15-4/tp/pull/113))
