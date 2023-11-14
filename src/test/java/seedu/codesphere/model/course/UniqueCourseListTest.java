@@ -13,8 +13,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.codesphere.model.course.exceptions.DuplicateCourseException;
 import seedu.codesphere.model.course.exceptions.CourseNotFoundException;
+import seedu.codesphere.model.course.exceptions.DuplicateCourseException;
 import seedu.codesphere.testutil.CourseBuilder;
 
 public class UniqueCourseListTest {
