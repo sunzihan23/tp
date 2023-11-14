@@ -413,7 +413,7 @@ Adds a student to the list of students in the selected course that the user is o
 Edits an existing student that the user is currently overseeing.
 
 **Format:** `edit INDEX [n/NAME] [e/EMAIL] [t/ENUM_TAG] [r/REMARK] [pq/PENDING_QUESTION]`
-* Edits the person at the specified `INDEX`.
+* Edits the student at the specified `INDEX`.
 * The index refers to the index number shown in the displayed students list.
 * `INDEX`: Must be a **positive integer** (1, 2, 3, ...), and it should fall within the range of students currently displayed such that it corresponds to a valid student.
 * Optional fields are indicated by square brackets [ ], but **at least one** of the optional fields must be provided.

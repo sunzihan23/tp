@@ -25,7 +25,7 @@ class JsonSerializableCourseList {
     private final List<JsonAdaptedCourse> courses = new ArrayList<>();
 
     /**
-     * Constructs a {@code JsonSerializableCourseList} with the given persons.
+     * Constructs a {@code JsonSerializableCourseList} with the given students.
      */
     @JsonCreator
     public JsonSerializableCourseList(@JsonProperty("courses") List<JsonAdaptedCourse> courses) {

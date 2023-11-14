@@ -31,7 +31,7 @@ package seedu.codesphere.logic.commands;
 import seedu.codesphere.model.Model;
 
 /**
- * Changes the remark of an existing person in the address book.
+ * Changes the remark of an existing student in the address book.
  */
 public class RemarkCommand extends Command {
 
@@ -68,8 +68,8 @@ Following the convention in other commands, we add relevant messages as constant
 
 ```java
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Edits the remark of the person identified "
-            + "by the index number used in the last person listing. "
+            + ": Edits the remark of the student identified "
+            + "by the index number used in the last student listing. "
             + "Existing remark will be overwritten by the input.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "r/ [REMARK]\n"
@@ -104,8 +104,8 @@ public class RemarkCommand extends Command {
     private final String remark;
 
     /**
-     * @param index of the person in the filtered person list to edit the remark
-     * @param remark of the person to be updated to
+     * @param index of the student in the filtered student list to edit the remark
+     * @param remark of the student to be updated to
      */
     public RemarkCommand(Index index, String remark) {
         requireAllNonNull(index, remark);

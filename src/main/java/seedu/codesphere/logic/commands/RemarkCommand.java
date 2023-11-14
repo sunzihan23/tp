@@ -35,8 +35,8 @@ public class RemarkCommand extends Command {
     private final Remark remark;
 
     /**
-     * @param index of the student in the filtered person list to edit the remark.
-     * @param remark of the person to be updated to.
+     * @param index of the student in the filtered student list to edit the remark.
+     * @param remark of the student to be updated to.
      */
     public RemarkCommand(Index index, Remark remark) {
         requireAllNonNull(index, remark);

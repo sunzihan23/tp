@@ -26,7 +26,7 @@ import seedu.codesphere.model.student.Student;
 import seedu.codesphere.model.tag.Tag;
 
 /**
- * Removes the remark or pending question of an existing person in the address book.
+ * Removes the remark or pending question of an existing student in the address book.
  */
 public class RemoveCommand extends Command {
 
@@ -131,7 +131,7 @@ public class RemoveCommand extends Command {
 
     /**
      * Stores the details to edit the student with. Each non-empty field value will replace the
-     * corresponding field value of the person.
+     * corresponding field value of the student.
      */
     public static class EditStudentDescriptor {
         private Name name;
