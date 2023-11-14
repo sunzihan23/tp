@@ -7,7 +7,7 @@ import seedu.codesphere.commons.util.ToStringBuilder;
 import seedu.codesphere.model.student.Student;
 
 /**
- * Tests that a {@code Person}'s {@code PendingQuestion} exists.
+ * Tests that a {@code Student}'s {@code PendingQuestion} exists.
  */
 public class AllPendingQuestionPredicate implements Predicate<Student> {
 

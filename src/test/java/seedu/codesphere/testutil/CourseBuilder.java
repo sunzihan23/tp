@@ -9,7 +9,7 @@ import seedu.codesphere.model.student.Student;
 import seedu.codesphere.model.student.UniqueStudentList;
 
 /**
- * A utility class to help with building Person objects.
+ * A utility class to help with building Student objects.
  */
 public class CourseBuilder {
 

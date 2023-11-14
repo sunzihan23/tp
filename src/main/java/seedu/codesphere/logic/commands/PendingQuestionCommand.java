@@ -16,7 +16,7 @@ import seedu.codesphere.model.student.PendingQuestion;
 import seedu.codesphere.model.student.Student;
 
 /**
- * Changes the pending question of an existing person in the address book.
+ * Changes the pending question of an existing student in the address book.
  */
 public class PendingQuestionCommand extends Command {
 
@@ -35,8 +35,8 @@ public class PendingQuestionCommand extends Command {
     private final PendingQuestion pendingQuestion;
 
     /**
-     * @param index of the person in the filtered person list to edit the pending question
-     * @param pendingQuestion of the person to be updated to
+     * @param index of the student in the filtered student list to edit the pending question
+     * @param pendingQuestion of the student to be updated to
      */
     public PendingQuestionCommand(Index index, PendingQuestion pendingQuestion) {
         requireAllNonNull(index, pendingQuestion);

@@ -20,7 +20,7 @@ public class EditCourseDescriptorBuilder {
     }
 
     /**
-     * Returns an {@code EditPersonDescriptor} with fields containing {@code student}'s details
+     * Returns an {@code EditCourseDescriptor} with fields containing {@code student}'s details
      */
     public EditCourseDescriptorBuilder(Course course) {
         descriptor = new EditCourseDescriptor();
@@ -28,7 +28,7 @@ public class EditCourseDescriptorBuilder {
     }
 
     /**
-     * Sets the {@code Name} of the {@code EditPersonDescriptor} that we are building.
+     * Sets the {@code Name} of the {@code EditCourseDescriptor} that we are building.
      */
     public EditCourseDescriptorBuilder withCourseName(String courseName) {
         descriptor.setCourseName(new CourseName(courseName));

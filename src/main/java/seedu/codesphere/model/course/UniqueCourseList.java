@@ -12,11 +12,11 @@ import seedu.codesphere.model.course.exceptions.CourseNotFoundException;
 import seedu.codesphere.model.course.exceptions.DuplicateCourseException;
 
 /**
- * A list of persons that enforces uniqueness between its elements and does not allow nulls.
- * A person is considered unique by comparing using {@code Person#isSamePerson(Person)}. As such, adding and updating of
- * persons uses Person#isSamePerson(Person) for equality so as to ensure that the person being added or updated is
- * unique in terms of identity in the UniquePersonList. However, the removal of a person uses Person#equals(Object)
- * to ensure that the person with exactly the same fields will be removed.
+ * A list of courses that enforces uniqueness between its elements and does not allow nulls.
+ * A course is considered unique by comparing using {@code Course#isSameCourse(Course)}. As such, adding and updating of
+ * courses uses Course#isSameCourse(Course) for equality so as to ensure that the course being added or updated is
+ * unique in terms of identity in the UniqueCourseList. However, the removal of a course uses Course#equals(Object)
+ * to ensure that the course with exactly the same fields will be removed.
  *
  * Supports a minimal set of list operations.
  *
@@ -29,7 +29,7 @@ public class UniqueCourseList implements Iterable<Course> {
             FXCollections.unmodifiableObservableList(internalList);
 
     /**
-     * Returns true if the list contains an equivalent person as the given argument.
+     * Returns true if the list contains an equivalent course as the given argument.
      */
     public boolean contains(Course toCheck) {
         requireNonNull(toCheck);
@@ -37,8 +37,8 @@ public class UniqueCourseList implements Iterable<Course> {
     }
 
     /**
-     * Adds a person to the list.
-     * The person must not already exist in the list.
+     * Adds a course to the list.
+     * The course must not already exist in the list.
      */
     public void add(Course toAdd) {
         requireNonNull(toAdd);
@@ -49,9 +49,9 @@ public class UniqueCourseList implements Iterable<Course> {
     }
 
     /**
-     * Replaces the person {@code target} in the list with {@code editedPerson}.
+     * Replaces the course {@code target} in the list with {@code editedCourse}.
      * {@code target} must exist in the list.
-     * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
+     * The course identity of {@code editedCourse} must not be the same as another existing course in the list.
      */
     public void setCourse(Course target, Course editedCourse) {
         requireAllNonNull(target, editedCourse);
@@ -69,8 +69,8 @@ public class UniqueCourseList implements Iterable<Course> {
     }
 
     /**
-     * Removes the equivalent person from the list.
-     * The person must exist in the list.
+     * Removes the equivalent course from the list.
+     * The course must exist in the list.
      */
     public void remove(Course toRemove) {
         requireNonNull(toRemove);
@@ -85,12 +85,12 @@ public class UniqueCourseList implements Iterable<Course> {
     }
 
     /**
-     * Replaces the contents of this list with {@code persons}.
-     * {@code persons} must not contain duplicate persons.
+     * Replaces the contents of this list with {@code courses}.
+     * {@code courses} must not contain duplicate courses.
      */
     public void setCourses(List<Course> courses) {
         requireAllNonNull(courses);
-        if (!personsAreUnique(courses)) {
+        if (!coursesAreUnique(courses)) {
             throw new DuplicateCourseException();
         }
 
@@ -135,9 +135,9 @@ public class UniqueCourseList implements Iterable<Course> {
     }
 
     /**
-     * Returns true if {@code persons} contains only unique persons.
+     * Returns true if {@code courses} contains only unique courses.
      */
-    private boolean personsAreUnique(List<Course> courses) {
+    private boolean coursesAreUnique(List<Course> courses) {
         for (int i = 0; i < courses.size() - 1; i++) {
             for (int j = i + 1; j < courses.size(); j++) {
                 if (courses.get(i).isSameCourse(courses.get(j))) {

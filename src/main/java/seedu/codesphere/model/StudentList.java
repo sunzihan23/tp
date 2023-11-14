@@ -11,7 +11,7 @@ import seedu.codesphere.model.student.UniqueStudentList;
 
 /**
  * Wraps all data at the address-book level
- * Duplicates are not allowed (by .isSamePerson comparison)
+ * Duplicates are not allowed (by .isSameStudent comparison)
  */
 public class StudentList implements ReadOnlyStudentList {
 
@@ -31,7 +31,7 @@ public class StudentList implements ReadOnlyStudentList {
     public StudentList() {}
 
     /**
-     * Creates an AddressBook using the Persons in the {@code toBeCopied}
+     * Creates an AddressBook using the Students in the {@code toBeCopied}
      */
     public StudentList(ReadOnlyStudentList toBeCopied) {
         this();
@@ -42,7 +42,7 @@ public class StudentList implements ReadOnlyStudentList {
 
     /**
      * Replaces the contents of the student list with {@code students}.
-     * {@code students} must not contain duplicate persons.
+     * {@code students} must not contain duplicate students.
      */
     public void setStudents(List<Student> students) {
         this.students.setStudents(students);
@@ -68,8 +68,8 @@ public class StudentList implements ReadOnlyStudentList {
     }
 
     /**
-     * Adds a person to the address book.
-     * The person must not already exist in the address book.
+     * Adds a student to the address book.
+     * The student must not already exist in the address book.
      */
     public void addStudent(Student p) {
         students.add(p);
@@ -78,7 +78,7 @@ public class StudentList implements ReadOnlyStudentList {
     /**
      * Replaces the given student {@code target} in the list with {@code editedStudent}.
      * {@code target} must exist in the student list.
-     * The person identity of {@code editedStudent} must not be the same as
+     * The student identity of {@code editedStudent} must not be the same as
      * another existing student in the student list.
      */
     public void setStudent(Student target, Student editedStudent) {
